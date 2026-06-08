@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "service": "Service",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "roles": "Python,FastAPI,Django",
+    "see_more": "SEE MORE"
+  },
+  "about": {
+    "title": "A little <span>about</span> me",
+    "text": "I am a backend-focused developer with strong expertise in Python and Django, where I specialize in building and maintaining secure, robust, and scalable databases. I also work with FastAPI to create fast, modern APIs. To complement my backend skills, I use HTML, CSS, JavaScript, and Bootstrap to build attractive, fully responsive frontends that adapt seamlessly across devices. I manage version control with Git and GitHub, and I enhance my workflow with AI tools such as Copilot and Claude."
+  },
+  "services": {
+    "title": "I do amazing things for clients",
+    "photographer": {
+      "title": "Python Developer",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+    },
+    "webdesigner": {
+      "title": "FastAPI Developer",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+    },
+    "artist": {
+      "title": "Django Developer",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+    }
+  },
+  "about_blocks": {
+    "block1": {
+      "title": "High qualit",
+      "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
+      "readmore": "Read more"
+    },
+    "block2": {
+      "title": "Professional Photography",
+      "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
+      "readmore": "Read more"
+    },
+    "block3": {
+      "title": "3D Modeling and Animations",
+      "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
+      "readmore": "Read more"
+    }
+  },
+  "portfolio": {
+    "title": "Recent <span>Projects</span>"
+  },
+  "cta": {
+    "button": "hire john doe"
+  },
+  "blog": {
+    "title": "My <span>little</span> blog",
+    "entry1": { "title": "Creative Minds", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero." },
+    "entry2": { "title": "Creative Hearts", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero." },
+    "entry3": { "title": "Creative Ideas", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero." },
+    "entry4": { "title": "Creative Minds", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero." },
+    "entry5": { "title": "Creative Hearts", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero." },
+    "entry6": { "title": "Creative Ideas", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero." }
+  },
+  "clients": {
+    "title": "What our clients said",
+    "testimonial1": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. <br><small>- Pete Rock, A New Tomorrow</small>",
+    "testimonial2": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. <br><small>- Michael Snowden, Creativeland CEO</small>",
+    "testimonial3": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. <br><small>- Tom Davis, GreenWonder</small>"
+  },
+  "newsletter": {
+    "title": "Subscribe to our Newsletter",
+    "placeholder": "Your email address",
+    "button": "Send"
+  },
+  "contact": {
+    "title": "Drop <span>me</span> a line",
+    "address_label": "Address",
+    "address_value": "23 Ipsum street, New York",
+    "phone_label": "Phone",
+    "phone_value": "+12 345 6789",
+    "email_label": "Email",
+    "form_name": "Your name",
+    "form_email": "Email address",
+    "form_message": "Write your message here...",
+    "form_send": "Send message"
+  },
+  "footer": {
+    "rights": "All Rights Reserved."
+  }
+}

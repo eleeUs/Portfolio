@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Elias Nicolas Flandez - Developer</title>
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/lightbox/css/lightbox.css" rel="stylesheet">
+    <link href="assets/textrotator/simpletextrotator.css" rel="stylesheet">
+    <link href="assets/flexslider/flexslider.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <!--[if lt IE 9]>
+    <script src="assets/html5shiv/html5shiv.js"></script>
+    <script src="assets/respond/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+      /* ============================================================
+         SELECTOR DE IDIOMA + BOTÓN DARK MODE
+         Barra fija en la esquina superior derecha.
+      ============================================================ */
+      #ui-controls {
+        position: fixed;
+        top: 16px;
+        right: 20px;
+        z-index: 9999;
+        display: flex;
+        gap: 6px;
+        align-items: center;
+      }
+      #ui-controls button {
+        background: rgba(255,255,255,0.15);
+        color: #fff;
+        border: 1px solid rgba(255,255,255,0.5);
+        padding: 4px 12px;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        transition: background 0.2s;
+        font-family: "Varela Round", sans-serif;
+      }
+      #ui-controls button:hover,
+      #ui-controls button.active {
+        background: rgba(255,255,255,0.35);
+      }
+      #ui-controls .separator {
+        width: 1px;
+        height: 18px;
+        background: rgba(255,255,255,0.35);
+      }
+      #btn-dark-mode { font-size: 15px; padding: 4px 10px; }
+
+      /* ============================================================
+         TRANSICION GLOBAL
+      ============================================================ */
+      body, body * {
+        transition: background-color 0.3s ease, color 0.3s ease,
+                    border-color 0.3s ease, box-shadow 0.3s ease !important;
+      }
+
+      /* ============================================================
+         DARK MODE
+      ============================================================ */
+      body.dark-mode #preloader { background-color: #121212; }
+
+      body.dark-mode { background-color: #121212; color: #c9c9c9; }
+
+      body.dark-mode a { color: #e06060; }
+      body.dark-mode a:hover, body.dark-mode a:focus { color: #f0c040; }
+
+      body.dark-mode p { color: #9a9a9a; }
+      body.dark-mode h1 { color: #e0e0e0; }
+      body.dark-mode h2 { color: #d0d0d0 !important; }
+      body.dark-mode h2::after { border-color: #3a3a3a; }
+      body.dark-mode h6 { color: #888888; }
+      body.dark-mode h6::after { border-color: #3a3a3a; }
+
+      body.dark-mode .light-bg,
+      body.dark-mode .dark-bg,
+      body.dark-mode section,
+      body.dark-mode .features,
+      body.dark-mode .swag,
+      body.dark-mode .contact-wrap { background-color: #121212; }
+
+      body.dark-mode .hero { background-color: #161616; }
+      body.dark-mode .hero h1 { color: #e0e0e0; }
+      body.dark-mode .hero h1 span { color: #555; }
+
+      body.dark-mode h1.arrow { color: #d0d0d0; }
+      body.dark-mode h1.arrow span { color: #E04343; }
+
+      body.dark-mode .menu-wrap { background: #1a1a1a; }
+      body.dark-mode .icon-list a { color: #aaaaaa; }
+      body.dark-mode .icon-list a:hover,
+      body.dark-mode .icon-list a:focus { color: #E04343; }
+      body.dark-mode .show-menu .menu-wrap { border-bottom-color: #E04343; }
+
+      body.dark-mode .color-bg { background: #1e1e1e; }
+      body.dark-mode .color-bg h6,
+      body.dark-mode .color-bg p { color: #b0b0b0; }
+      body.dark-mode .color-bg h6::after { border-color: #3a3a3a; }
+      body.dark-mode .color-bg a { color: #FFE800; }
+      body.dark-mode .color-bg .weight-outline-btn { color: #c0c0c0; border-color: #555; }
+      body.dark-mode .color-bg .weight-outline-btn:hover { background: #333; color: #fff; border-color: transparent; }
+      body.dark-mode .color-bg .flex-control-paging li a { background: #555; border-color: #555; }
+      body.dark-mode .color-bg .flex-control-paging li a.flex-active { background: #FFE800; border-color: #FFE800; }
+
+      body.dark-mode .about-text { background-color: #1a1a1a; }
+      body.dark-mode .about-text h1 { color: #888; }
+
+      body.dark-mode .services .icon { border-color: #E04343; color: #E04343; background: transparent; }
+      body.dark-mode .services .item:hover .icon { background: #E04343; }
+
+      body.dark-mode .intro { background-color: #1a1a1a; }
+
+      body.dark-mode .dark-box { background: #1f1f1f; }
+      body.dark-mode .contact-details h2 span { color: #888; }
+
+      body.dark-mode .contact .form-control {
+        background-color: #1e1e1e;
+        color: #c9c9c9;
+        border-color: #3a3a3a;
+      }
+      body.dark-mode .contact .form-control:focus { border-color: #555; }
+      body.dark-mode .contact .form-control::placeholder { color: #666; }
+
+      body.dark-mode .btn-send { background: #E04343; color: #fff; }
+      body.dark-mode .btn-send:hover { background: #FFE800; color: #E04343; }
+
+      body.dark-mode .subscribe { background-color: #1e1e1e; }
+      body.dark-mode .subscribe h1 { color: #d0d0d0; }
+      body.dark-mode .subscribe input[type=text] {
+        background-color: rgba(255,255,255,0.05);
+        color: #aaa;
+        border-color: #FFE800;
+      }
+
+      body.dark-mode footer { background-color: #0d0d0d; }
+      body.dark-mode footer p { color: #555; }
+      body.dark-mode footer a { color: #555; }
+
+      body.dark-mode .flex-control-paging li a { background: #444; border-color: #444; }
+      body.dark-mode .flex-control-paging li a.flex-active { background: #E04343; border-color: #E04343; }
+
+      body.dark-mode .wrapper { background: #1a1a1a; }
+    </style>
+  </head>
+
+  <body id="top">
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- ============================================================
+         SELECTOR DE IDIOMA
+         Botones EN / ES visibles en todo momento (posición fija).
+         Al hacer clic llaman a la función switchLang() definida abajo.
+    ============================================================ -->
+    <!-- Barra de controles: idioma + tema oscuro -->
+    <div id="ui-controls">
+      <button onclick="switchLang('en')" id="btn-en" class="active">EN</button>
+      <button onclick="switchLang('es')" id="btn-es">ES</button>
+      <div class="separator"></div>
+      <button id="btn-dark-mode" onclick="toggleDarkMode()" title="Toggle dark mode">☀️</button>
+    </div>
+
+
+    <!-- HEADER -->
+    <header id="home">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="menu-wrap">
+            <nav class="menu">
+              <div class="icon-list">
+                <!-- data-i18n indica la clave de traducción que i18next usará para este elemento -->
+                <a href="index.html#home"><i class="fa fa-fw fa-home"></i><span data-i18n="nav.home">Home</span></a>
+                <a href="index.html#about"><i class="fa fa-fw fa-quote-left"></i><span data-i18n="nav.about">About</span></a>
+                <a href="index.html#service"><i class="fa fa-fw fa-globe"></i><span data-i18n="nav.service">Service</span></a>
+                <a href="index.html#portfolio"><i class="fa fa-fw fa-picture-o"></i><span data-i18n="nav.portfolio">Portfolio</span></a>
+                <a href="index.html#blog"><i class="fa fa-fw fa-rss"></i><span data-i18n="nav.blog">Blog</span></a>
+                <a href="index.html#contact"><i class="fa fa-fw fa-envelope-o"></i><span data-i18n="nav.contact">Contact</span></a>
+              </div>
+            </nav>
+          </div>
+          <button class="menu-button" id="open-button"></button>
+        </div>
+      </div>
+
+      <section class="hero" id="hero">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-right navicon">
+              <a id="nav-toggle" class="nav_slide_button" href="index.html#"><span></span></a>
+            </div>
+          </div>
+
+ <!-- Nombre del autor con animación de entrada -->
+          <div class="row">
+            <div class="col-md-8 col-md-offset-1 inner">
+              <!-- Título principal: nombre del autor con letras destacadas en color -->
+              <h1 class="animated fadeInDown">
+                El<span style="color:#E04343;">ia</span>s<br/>
+                <span>Nic<span style="color:#FFE800">o</span>las</span>
+                <span style="color:#E04343;">Fl</span>and</span><span style="color:#E04343;">ez<br/>
+              </h1>
+              <!-- Subtítulo con rotación automática de texto entre los roles del autor -->
+              <h3 class="animated fadeInUp delay-05s"><span class="rotate">Python,FastAPI,Django</span></h3>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+              <a href="index.html#about" class="scrollto wow fadeInUp delay-5s">
+                <!-- [html] le indica a i18next que el valor puede contener HTML -->
+                <p data-i18n="hero.see_more">SEE MORE</p>
+                <p class="scrollto--arrow"><img src="img/scroll-down.png" alt="scroll down arrow"></p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+
+    <!-- ABOUT -->
+    <section class="intro text-center section-padding color-bg" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 wp1">
+            <h1 class="arrow" data-i18n="[html]about.title">A little <span>about</span> me</h1>
+            <p data-i18n="[html]about.text">I am enough of an artist...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SERVICES -->
+    <section class="features text-center section-padding" id="service">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="arrow" data-i18n="services.title">I do amazing things for clients</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="services">
+              <div class="col-md-4 wp2 item">
+                <div class="icon"><i class="fa fa-camera"></i></div>
+                <h2 data-i18n="services.photographer.title">Photographer</h2>
+                <p data-i18n="services.photographer.text">Lorem ipsum...</p>
+              </div>
+              <div class="col-md-4 wp2 item delay-05s">
+                <div class="icon"><i class="fa fa-desktop"></i></div>
+                <h2 data-i18n="services.webdesigner.title">Web Designer</h2>
+                <p data-i18n="services.webdesigner.text">Lorem ipsum...</p>
+              </div>
+              <div class="col-md-4 wp2 item delay-1s">
+                <div class="icon"><i class="fa fa-cubes"></i></div>
+                <h2 data-i18n="services.artist.title">3D Artist</h2>
+                <p data-i18n="services.artist.text">Lorem ipsum...</p>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ABOUT BLOCKS (imagen + texto) -->
+    <div class="container-fluid">
+      <div class="row color-bg">
+        <div class="col-md-6 nopadding features-intro-img">
+          <div class="about-image" style="background-image:url(img/about1.png)"></div>
+        </div>
+        <div class="col-md-6 about-text">
+          <h6 data-i18n="about_blocks.block1.title">High quality webdesign</h6>
+          <p data-i18n="about_blocks.block1.text">Lorem ipsum...</p><br>
+          <a href="index.html#team" class="weight-outline-btn" data-i18n="about_blocks.block1.readmore">Read more</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 about-text">
+          <h6 data-i18n="about_blocks.block2.title">Professional Photography</h6>
+          <p data-i18n="about_blocks.block2.text">Lorem ipsum...</p><br>
+          <a href="index.html#team" class="weight-outline-btn" data-i18n="about_blocks.block2.readmore">Read more</a>
+        </div>
+        <div class="col-md-6 nopadding features-intro-img">
+          <div class="about-image" style="background-image:url(img/about2.png)"></div>
+        </div>
+      </div>
+      <div class="row color-bg">
+        <div class="col-md-6 nopadding features-intro-img">
+          <div class="about-image" style="background-image:url(img/about3.png)"></div>
+        </div>
+        <div class="col-md-6 about-text">
+          <h6 data-i18n="about_blocks.block3.title">3d modeling and animations</h6>
+          <p data-i18n="about_blocks.block3.text">Lorem ipsum...</p><br>
+          <a href="index.html#team" class="weight-outline-btn" data-i18n="about_blocks.block3.readmore">Read more</a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- PORTFOLIO -->
+    <section class="swag text-center" id="portfolio">
+      <div class="container">
+        <div class="row">
+          <h1 class="arrow" data-i18n="[html]portfolio.title">Recent <span>Projects</span></h1>
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <div class="row row-offset-0">
+        <div class="col-md-3 col-sm-6"><div class="overlay-effect effects clearfix"><div class="img"><a href="img/portfolio/portfolio-01-large.jpg" data-lightbox="roadtrip" title="Project One"><img class="grayscale" src="img/portfolio/portfolio-01-thumbnail.jpg" alt="Portfolio Item"></a></div></div></div>
+        <div class="col-md-3 col-sm-6"><div class="overlay-effect effects clearfix"><div class="img"><a href="img/portfolio/portfolio-02-large.jpg" data-lightbox="roadtrip" title="Project Two"><img class="grayscale" src="img/portfolio/portfolio-02-thumbnail.jpg" alt="Portfolio Item"></a></div></div></div>
+        <div class="col-md-3 col-sm-6"><div class="overlay-effect effects clearfix"><div class="img"><a href="img/portfolio/portfolio-03-large.jpg" data-lightbox="roadtrip" title="Project Three"><img class="grayscale" src="img/portfolio/portfolio-03-thumbnail.jpg" alt="Portfolio Item"></a></div></div></div>
+        <div class="col-md-3 col-sm-6"><div class="overlay-effect effects clearfix"><div class="img"><a href="img/portfolio/portfolio-04-large.jpg" data-lightbox="roadtrip" title="Project Four"><img class="grayscale" src="img/portfolio/portfolio-04-thumbnail.jpg" alt="Portfolio Item"></a></div></div></div>
+        <div class="col-md-3 col-sm-6"><div class="overlay-effect effects clearfix"><div class="img"><a href="img/portfolio/portfolio-05-large.jpg" data-lightbox="roadtrip" title="Project Five"><img class="grayscale" src="img/portfolio/portfolio-05-thumbnail.jpg" alt="Portfolio Item"></a></div></div></div>
+        <div class="col-md-3 col-sm-6"><div class="overlay-effect effects clearfix"><div class="img"><a href="img/portfolio/portfolio-06-large.jpg" data-lightbox="roadtrip" title="Project Six"><img class="grayscale" src="img/portfolio/portfolio-06-thumbnail.jpg" alt="Portfolio Item"></a></div></div></div>
+        <div class="col-md-3 col-sm-6"><div class="overlay-effect effects clearfix"><div class="img"><a href="img/portfolio/portfolio-07-large.jpg" data-lightbox="roadtrip" title="Project Seven"><img class="grayscale" src="img/portfolio/portfolio-07-thumbnail.jpg" alt="Portfolio Item"></a></div></div></div>
+        <div class="col-md-3 col-sm-6"><div class="overlay-effect effects clearfix"><div class="img"><a href="img/portfolio/portfolio-08-large.jpg" data-lightbox="roadtrip" title="Project Eight"><img class="grayscale" src="img/portfolio/portfolio-08-thumbnail.jpg" alt="Portfolio Item"></a></div></div></div>
+      </div>
+    </div>
+
+
+    <!-- CTA -->
+    <div class="spacer-cta text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <a href="index.html#contact" class="outline-btn" data-i18n="cta.button">hire john doe</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- BLOG -->
+    <section class="text-center section-padding" id="blog">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="arrow" data-i18n="[html]blog.title">My <span>little</span> blog</h1>
+          </div>
+        </div><br><br>
+        <div class="row">
+          <div id="blogSlider">
+            <ul class="slides">
+              <li>
+                <div class="col-md-4 wp4">
+                  <div class="overlay-effect effects clearfix"><div class="img"><img src="img/blog1.jpg" class="grayscale" alt="Blog Item"></div></div><br>
+                  <h2 data-i18n="blog.entry1.title">Creative Minds</h2>
+                  <p data-i18n="blog.entry1.text">Lorem ipsum...</p>
+                </div>
+                <div class="col-md-4 wp4 delay-05s">
+                  <div class="overlay-effect effects clearfix"><div class="img"><img src="img/blog2.jpg" class="grayscale" alt="Blog Item"></div></div><br>
+                  <h2 data-i18n="blog.entry2.title">Creative Hearts</h2>
+                  <p data-i18n="blog.entry2.text">Lorem ipsum...</p>
+                </div>
+                <div class="col-md-4 wp4 delay-1s">
+                  <div class="overlay-effect effects clearfix"><div class="img"><img src="img/blog3.jpg" class="grayscale" alt="Blog Item"></div></div><br>
+                  <h2 data-i18n="blog.entry3.title">Creative Ideas</h2>
+                  <p data-i18n="blog.entry3.text">Lorem ipsum...</p>
+                </div>
+              </li>
+              <li>
+                <div class="col-md-4 wp4">
+                  <div class="overlay-effect effects clearfix"><div class="img"><img src="img/blog1.jpg" class="grayscale" alt="Blog Item"></div></div><br>
+                  <h2 data-i18n="blog.entry4.title">Creative Minds</h2>
+                  <p data-i18n="blog.entry4.text">Lorem ipsum...</p>
+                </div>
+                <div class="col-md-4 wp4 delay-05s">
+                  <div class="overlay-effect effects clearfix"><div class="img"><img src="img/blog2.jpg" class="grayscale" alt="Blog Item"></div></div><br>
+                  <h2 data-i18n="blog.entry5.title">Creative Hearts</h2>
+                  <p data-i18n="blog.entry5.text">Lorem ipsum...</p>
+                </div>
+                <div class="col-md-4 wp4 delay-1s">
+                  <div class="overlay-effect effects clearfix"><div class="img"><img src="img/blog3.jpg" class="grayscale" alt="Blog Item"></div></div><br>
+                  <h2 data-i18n="blog.entry6.title">Creative Ideas</h2>
+                  <p data-i18n="blog.entry6.text">Lorem ipsum...</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CLIENTS -->
+    <div class="container-fluid">
+      <div class="row color-bg">
+        <div class="col-md-6 nopadding features-intro-img wow fadeInLeft">
+          <div class="about-image" style="background-image:url(img/clients.png)"></div>
+        </div>
+        <div class="col-md-6 nopadding about-text">
+          <h6 data-i18n="clients.title">What our clients said</h6>
+          <div id="clientSlider">
+            <ul class="slides">
+              <li><p data-i18n="[html]clients.testimonial1">Testimonial 1</p></li>
+              <li><p data-i18n="[html]clients.testimonial2">Testimonial 2</p></li>
+              <li><p data-i18n="[html]clients.testimonial3">Testimonial 3</p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- NEWSLETTER -->
+    <section>
+      <div class="container-fluid">
+        <div class="row color-bg">
+          <div class="col-md-6 nopadding subscribe text-center">
+            <h1><i class="fa fa-paper-plane"></i><span data-i18n="newsletter.title">Subscribe to our Newsletter</span></h1>
+            <form action="index.html#">
+              <!-- [placeholder] le indica a i18next que debe traducir el atributo placeholder -->
+              <input type="text" name="" value="" data-i18n="[placeholder]newsletter.placeholder" required>
+              <input type="submit" name="" data-i18n="[value]newsletter.button" value="Send">
+            </form>
+          </div>
+          <div class="col-md-6 nopadding features-intro-img">
+            <div class="about-image" style="background-image:url(img/newsletter.png)"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="text-center section-padding contact-wrap" id="contact">
+      <a href="index.html#top" class="up-btn"><i class="fa fa-chevron-up"></i></a>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="arrow" data-i18n="[html]contact.title">Drop <span>me</span> a line</h1>
+          </div>
+        </div>
+        <div class="row contact-details">
+          <div class="col-md-4">
+            <div class="dark-box box-hover">
+              <h2><i class="fa fa-map-marker"></i><span data-i18n="contact.address_label">Address</span></h2>
+              <p data-i18n="contact.address_value">23 Ipsum street, New York</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="dark-box box-hover">
+              <h2><i class="fa fa-mobile"></i><span data-i18n="contact.phone_label">Phone</span></h2>
+              <p data-i18n="contact.phone_value">+12 345 6789</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="dark-box box-hover">
+              <h2><i class="fa fa-paper-plane"></i><span data-i18n="contact.email_label">Email</span></h2>
+              <p><a href="index.html#">info@themewagon.com</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div id="googlemaps"></div>
+          </div>
+          <div class="col-md-6 contact">
+            <form role="form">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" data-i18n="[placeholder]contact.form_name" placeholder="Your name">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="email" class="form-control" data-i18n="[placeholder]contact.form_email" placeholder="Email address">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" data-i18n="[placeholder]contact.form_message" placeholder="Write your message here..." style="height:232px;"></textarea>
+              </div>
+              <button type="submit" class="btn btn-send" data-i18n="contact.form_send">Send message</button>
+            </form>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="social-buttons">
+              <li><a href="index.html#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
+              <li><a href="index.html#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="index.html#" class="social-btn"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="index.html#" class="social-btn"><i class="fa fa-deviantart"></i></a></li>
+              <li><a href="index.html#" class="social-btn"><i class="fa fa-youtube"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p><span data-i18n="footer.rights">All Rights Reserved.</span> &copy; 2015 <a href="http://www.themewagon.com">ThemeWagon</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Scripts originales del tema -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/smoothscroll/smoothscroll.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="assets/flexslider/jquery.flexslider.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="assets/textrotator/jquery.simple-text-rotator.js"></script>
+    <script src="assets/lightbox/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeKBBPJTG3v5w3cNPAgM6ZsJiPyL1mP_o&amp;sensor=false"></script>
+    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- ============================================================
+         FIX: i18next cargado ANTES del bloque que lo utiliza.
+         - i18next: núcleo de la librería de traducción
+         - http-backend: carga los archivos JSON de /locales/
+         - browser-languagedetector: detecta el idioma del navegador
+    ============================================================ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/23.11.5/i18next.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-http-backend/2.5.2/i18nextHttpBackend.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-browser-languagedetector/7.2.1/i18nextBrowserLanguageDetector.min.js"></script>
+
+    <script>
+      // ----------------------------------------------------------------
+      // FIX 1: Dark mode toggle — agrega/quita .dark-mode en <body>
+      // y persiste la preferencia en localStorage.
+      // ----------------------------------------------------------------
+      function toggleDarkMode() {
+        var isDark = document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', isDark ? '1' : '0');
+        document.getElementById('btn-dark-mode').textContent = isDark ? '🌙' : '☀️';
+      }
+
+      // ----------------------------------------------------------------
+      // FIX 2: Restaurar dark mode al recargar la página SIN parpadeo.
+      // La clase se aplica directamente en <body> (no en <html>),
+      // ya que todo el CSS usa el selector body.dark-mode.
+      // ----------------------------------------------------------------
+      (function() {
+        if (localStorage.getItem('darkMode') === '1') {
+          // Aplicar inmediatamente para evitar flash of unstyled content
+          document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('dark-mode');
+            var btn = document.getElementById('btn-dark-mode');
+            if (btn) btn.textContent = '🌙';
+          });
+        }
+      })();
+
+      // ============================================================
+      // FIX 3: Inicialización de i18next — carga JSONs por HTTP
+      // y aplica traducciones al DOM. Gestiona cambio de idioma
+      // y persistencia de preferencia del usuario.
+      // ============================================================
+      // Función que aplica todas las traducciones al DOM recorriendo
+      // los elementos con el atributo [data-i18n]
+      function applyTranslations() {
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+          var key = el.getAttribute('data-i18n');
+
+          if (key.startsWith('[html]')) {
+            // Modo HTML: inserta el valor como innerHTML (permite etiquetas <span>, <a>, etc.)
+            el.innerHTML = i18next.t(key.replace('[html]', ''));
+
+          } else if (key.startsWith('[placeholder]')) {
+            // Modo placeholder: traduce el atributo placeholder de inputs y textareas
+            el.setAttribute('placeholder', i18next.t(key.replace('[placeholder]', '')));
+
+          } else if (key.startsWith('[value]')) {
+            // Modo value: traduce el atributo value de botones tipo submit
+            el.setAttribute('value', i18next.t(key.replace('[value]', '')));
+
+          } else {
+            // Modo texto plano (el más común): reemplaza el textContent del elemento
+            el.textContent = i18next.t(key);
+          }
+        });
+
+        // Actualiza el atributo lang del <html> para accesibilidad y SEO
+        document.documentElement.lang = i18next.language;
+
+        // Reinicializa el rotador de texto con las nuevas palabras traducidas
+        var $rotate = $('.rotate');
+        if ($rotate.length && typeof $.fn.textrotator === 'function') {
+          $rotate.textrotator('destroy'); // Detiene la animación actual
+          $rotate.textrotator({
+            animation: "fade",
+            separator: ",",
+            speed: 2000
+          });
+        }
+
+        // Actualiza los botones del selector para reflejar el idioma activo
+        document.getElementById('btn-en').classList.toggle('active', i18next.language === 'en');
+        document.getElementById('btn-es').classList.toggle('active', i18next.language === 'es');
+      }
+
+      // Función pública llamada al hacer clic en los botones EN / ES
+      function switchLang(lang) {
+        i18next.changeLanguage(lang, function() {
+          applyTranslations();
+          // Guarda la preferencia del usuario en localStorage para futuras visitas
+          localStorage.setItem('preferredLang', lang);
+        });
+      }
+
+      // Inicialización de i18next al cargar la página
+      i18next
+        .use(i18nextHttpBackend)           // Plugin para cargar JSONs por HTTP
+        .use(i18nextBrowserLanguageDetector) // Plugin para detectar idioma del navegador
+        .init({
+          // Idioma por defecto si no se detecta ninguno
+          fallbackLng: 'en',
+          // Idiomas soportados
+          supportedLngs: ['en', 'es'],
+          // Ruta donde están los archivos de traducción JSON
+          // Estructura esperada: /locales/en/translation.json y /locales/es/translation.json
+          backend: {
+            loadPath: 'locales/{{lng}}/translation.json'
+          },
+          // Opciones del detector de idioma del navegador
+          detection: {
+            // Orden de prioridad: primero localStorage, luego el idioma del navegador
+            order: ['localStorage', 'navigator'],
+            lookupLocalStorage: 'preferredLang'
+          },
+          // Permite usar claves con puntos (ej: "nav.home") como rutas anidadas en el JSON
+          keySeparator: '.',
+          // No escapar HTML en los valores (necesario para claves con [html])
+          interpolation: { escapeValue: false }
+        }, function(err) {
+          if (err) {
+            console.warn('i18next: error al cargar traducciones', err);
+          }
+          // Una vez cargadas las traducciones, aplica los textos al DOM
+          applyTranslations();
+        });
+    </script>
+
+    <!-- Google Maps -->
+    <script type="text/javascript">
+      google.maps.event.addDomListener(window, 'load', init);
+      function init() {
+        var mapOptions = {
+          zoom: 15,
+          scrollwheel: false,
+          center: new google.maps.LatLng(40.68961985411178, -74.01618003845215),
+          styles: [{ featureType:'water', stylers:[{color:'#F2F2F2'},{visibility:'on'}] },{ featureType:'landscape', stylers:[{color:'#FFFFFF'}] },{ featureType:'road', stylers:[{saturation:-100},{lightness:45}] },{ featureType:'road.highway', stylers:[{visibility:'simplified'}] },{ featureType:'road.arterial', elementType:'labels.icon', stylers:[{visibility:'off'}] },{ featureType:'administrative', elementType:'labels.text.fill', stylers:[{color:'#ADADAD'}] },{ featureType:'transit', stylers:[{visibility:'off'}] },{ featureType:'poi', stylers:[{visibility:'off'}] }]
+        };
+        var mapElement = document.getElementById('googlemaps');
+        var map = new google.maps.Map(mapElement, mapOptions);
+      }
+    </script>
+
+    <!-- Text Rotator (inicialización base; i18next la reinicializa en cada cambio de idioma) -->
+    <script type="text/javascript">
+      $(".rotate").textrotator({
+        animation: "fade",
+        separator: ",",
+        speed: 2000
+      });
+    </script>
+
+  </body>
+</html>
