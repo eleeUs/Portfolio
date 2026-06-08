@@ -2,7 +2,7 @@
 # Portfolio
 Portfolio Project for the presentation of my projects
 =======
-# Elias Nicolas Portfolio
+# Elias Nicolas Flandez Muñoz Portfolio
 A Responsive Free One Page Portfolio Website
 
 
