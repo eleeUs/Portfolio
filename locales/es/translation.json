@@ -75,10 +75,8 @@
   },
   "contact": {
     "title": "Escríbeme <span>un</span> mensaje",
-    "address_label": "Dirección",
-    "address_value": "23 Ipsum street, Nueva York",
-    "phone_label": "Teléfono",
-    "phone_value": "+12 345 6789",
+    "phone_label": "CV",
+    "phone_value": "Descarga mi CV",
     "email_label": "Correo",
     "form_name": "Tu nombre",
     "form_email": "Correo electrónico",

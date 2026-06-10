@@ -68,39 +68,31 @@
          DARK MODE
       ============================================================ */
       body.dark-mode #preloader { background-color: #121212; }
-
       body.dark-mode { background-color: #121212; color: #c9c9c9; }
-
       body.dark-mode a { color: #e06060; }
       body.dark-mode a:hover, body.dark-mode a:focus { color: #f0c040; }
-
       body.dark-mode p { color: #9a9a9a; }
       body.dark-mode h1 { color: #e0e0e0; }
       body.dark-mode h2 { color: #d0d0d0 !important; }
       body.dark-mode h2::after { border-color: #3a3a3a; }
       body.dark-mode h6 { color: #888888; }
       body.dark-mode h6::after { border-color: #3a3a3a; }
-
       body.dark-mode .light-bg,
       body.dark-mode .dark-bg,
       body.dark-mode section,
       body.dark-mode .features,
       body.dark-mode .swag,
       body.dark-mode .contact-wrap { background-color: #121212; }
-
       body.dark-mode .hero { background-color: #161616; }
       body.dark-mode .hero h1 { color: #e0e0e0; }
       body.dark-mode .hero h1 span { color: #555; }
-
       body.dark-mode h1.arrow { color: #d0d0d0; }
       body.dark-mode h1.arrow span { color: #E04343; }
-
       body.dark-mode .menu-wrap { background: #1a1a1a; }
       body.dark-mode .icon-list a { color: #aaaaaa; }
       body.dark-mode .icon-list a:hover,
       body.dark-mode .icon-list a:focus { color: #E04343; }
       body.dark-mode .show-menu .menu-wrap { border-bottom-color: #E04343; }
-
       body.dark-mode .color-bg { background: #1e1e1e; }
       body.dark-mode .color-bg h6,
       body.dark-mode .color-bg p { color: #b0b0b0; }
@@ -110,18 +102,13 @@
       body.dark-mode .color-bg .weight-outline-btn:hover { background: #333; color: #fff; border-color: transparent; }
       body.dark-mode .color-bg .flex-control-paging li a { background: #555; border-color: #555; }
       body.dark-mode .color-bg .flex-control-paging li a.flex-active { background: #FFE800; border-color: #FFE800; }
-
       body.dark-mode .about-text { background-color: #1a1a1a; }
       body.dark-mode .about-text h1 { color: #888; }
-
       body.dark-mode .services .icon { border-color: #E04343; color: #E04343; background: transparent; }
       body.dark-mode .services .item:hover .icon { background: #E04343; }
-
       body.dark-mode .intro { background-color: #1a1a1a; }
-
       body.dark-mode .dark-box { background: #1f1f1f; }
       body.dark-mode .contact-details h2 span { color: #888; }
-
       body.dark-mode .contact .form-control {
         background-color: #1e1e1e;
         color: #c9c9c9;
@@ -129,10 +116,8 @@
       }
       body.dark-mode .contact .form-control:focus { border-color: #555; }
       body.dark-mode .contact .form-control::placeholder { color: #666; }
-
       body.dark-mode .btn-send { background: #E04343; color: #fff; }
       body.dark-mode .btn-send:hover { background: #FFE800; color: #E04343; }
-
       body.dark-mode .subscribe { background-color: #1e1e1e; }
       body.dark-mode .subscribe h1 { color: #d0d0d0; }
       body.dark-mode .subscribe input[type=text] {
@@ -140,15 +125,40 @@
         color: #aaa;
         border-color: #FFE800;
       }
-
       body.dark-mode footer { background-color: #0d0d0d; }
       body.dark-mode footer p { color: #555; }
       body.dark-mode footer a { color: #555; }
-
       body.dark-mode .flex-control-paging li a { background: #444; border-color: #444; }
       body.dark-mode .flex-control-paging li a.flex-active { background: #E04343; border-color: #E04343; }
-
       body.dark-mode .wrapper { background: #1a1a1a; }
+
+      /* ============================================================
+         BUG 2: Color "SEE MORE" visible sobre el fondo
+      ============================================================ */
+      .hero .scrollto p[data-i18n="hero.see_more"] {
+        color: #ffffff !important;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+      }
+      .hero .scrollto p[data-i18n="hero.see_more"]:hover {
+        color: #FFE800 !important;
+      }
+
+      /* ============================================================
+         BUG 3: Separación entre tarjetas y mapa/formulario
+      ============================================================ */
+      .contact-details {
+        margin-bottom: 40px;
+      }
+      #googlemaps {
+        margin-top: 20px;
+        height: 300px;
+      }
+      @media (max-width: 768px) {
+        .contact-details {
+          margin-bottom: 20px;
+        }
+      }
     </style>
   </head>
 
@@ -157,11 +167,6 @@
     <!-- Preloader -->
     <div id="preloader"></div>
 
-    <!-- ============================================================
-         SELECTOR DE IDIOMA
-         Botones EN / ES visibles en todo momento (posición fija).
-         Al hacer clic llaman a la función switchLang() definida abajo.
-    ============================================================ -->
     <!-- Barra de controles: idioma + tema oscuro -->
     <div id="ui-controls">
       <button onclick="switchLang('en')" id="btn-en" class="active">EN</button>
@@ -170,7 +175,6 @@
       <button id="btn-dark-mode" onclick="toggleDarkMode()" title="Toggle dark mode">☀️</button>
     </div>
 
-
     <!-- HEADER -->
     <header id="home">
       <div class="container-fluid">
@@ -178,7 +182,6 @@
           <div class="menu-wrap">
             <nav class="menu">
               <div class="icon-list">
-                <!-- data-i18n indica la clave de traducción que i18next usará para este elemento -->
                 <a href="index.html#home"><i class="fa fa-fw fa-home"></i><span data-i18n="nav.home">Home</span></a>
                 <a href="index.html#about"><i class="fa fa-fw fa-quote-left"></i><span data-i18n="nav.about">About</span></a>
                 <a href="index.html#service"><i class="fa fa-fw fa-globe"></i><span data-i18n="nav.service">Service</span></a>
@@ -200,24 +203,24 @@
             </div>
           </div>
 
- <!-- Nombre del autor con animación de entrada -->
+          <!-- Nombre del autor con animación de entrada -->
           <div class="row">
             <div class="col-md-8 col-md-offset-1 inner">
-              <!-- Título principal: nombre del autor con letras destacadas en color -->
               <h1 class="animated fadeInDown">
                 El<span style="color:#E04343;">ia</span>s<br/>
                 <span>Nic<span style="color:#FFE800">o</span>las</span>
                 <span style="color:#E04343;">Fl</span>and</span><span style="color:#E04343;">ez<br/>
               </h1>
-              <!-- Subtítulo con rotación automática de texto entre los roles del autor -->
-              <h3 class="animated fadeInUp delay-03s"><span class="rotate">Python,FastAPI,Django</span></h3>
+              <!-- BUG 1: Altura mínima fija para evitar saltos en el fondo -->
+              <h3 class="animated fadeInUp delay-03s" style="min-height: 60px;">
+                <span class="rotate">Python,FastAPI,Django</span>
+              </h3>
             </div>
           </div>
 
           <div class="row">
             <div class="col-md-6 col-md-offset-3 text-center">
               <a href="index.html#about" class="scrollto wow fadeInUp delay-5s">
-                <!-- [html] le indica a i18next que el valor puede contener HTML -->
                 <p data-i18n="hero.see_more">SEE MORE</p>
                 <p class="scrollto--arrow"><img src="img/scroll-down.png" alt="scroll down arrow"></p>
               </a>
@@ -226,7 +229,6 @@
         </div>
       </section>
     </header>
-
 
     <!-- ABOUT -->
     <section class="intro text-center section-padding color-bg" id="about">
@@ -239,7 +241,6 @@
         </div>
       </div>
     </section>
-
 
     <!-- SERVICES -->
     <section class="features text-center section-padding" id="service">
@@ -274,8 +275,7 @@
       </div>
     </section>
 
-
-    <!-- ABOUT BLOCKS (imagen + texto) -->
+    <!-- ABOUT BLOCKS -->
     <div class="container-fluid">
       <div class="row color-bg">
         <div class="col-md-6 nopadding features-intro-img">
@@ -309,7 +309,6 @@
       </div>
     </div>
 
-
     <!-- PORTFOLIO -->
     <section class="swag text-center" id="portfolio">
       <div class="container">
@@ -331,7 +330,6 @@
       </div>
     </div>
 
-
     <!-- CTA -->
     <div class="spacer-cta text-center">
       <div class="container">
@@ -342,7 +340,6 @@
         </div>
       </div>
     </div>
-
 
     <!-- BLOG -->
     <section class="text-center section-padding" id="blog">
@@ -395,7 +392,6 @@
       </div>
     </section>
 
-
     <!-- CLIENTS -->
     <div class="container-fluid">
       <div class="row color-bg">
@@ -415,7 +411,6 @@
       </div>
     </div>
 
-
     <!-- NEWSLETTER -->
     <section>
       <div class="container-fluid">
@@ -423,7 +418,6 @@
           <div class="col-md-6 nopadding subscribe text-center">
             <h1><i class="fa fa-paper-plane"></i><span data-i18n="newsletter.title">Subscribe to our Newsletter</span></h1>
             <form action="index.html#">
-              <!-- [placeholder] le indica a i18next que debe traducir el atributo placeholder -->
               <input type="text" name="" value="" data-i18n="[placeholder]newsletter.placeholder" required>
               <input type="submit" name="" data-i18n="[value]newsletter.button" value="Send">
             </form>
@@ -435,7 +429,6 @@
       </div>
     </section>
 
-
     <!-- CONTACT -->
     <section class="text-center section-padding contact-wrap" id="contact">
       <a href="index.html#top" class="up-btn"><i class="fa fa-chevron-up"></i></a>
@@ -446,21 +439,27 @@
           </div>
         </div>
         <div class="row contact-details">
-  <!-- Se ha eliminado la tarjeta de "Address" para dar más espacio a Phone y Email -->
-  <!-- Cada tarjeta usaba col-md-4; ahora usamos col-md-6 para que ocupen 50% cada una -->
-  <div class="col-md-6">
-    <div class="dark-box box-hover">
-      <h2><i class="fa fa-mobile"></i><span data-i18n="contact.phone_label">Phone</span></h2>
-      <p data-i18n="contact.phone_value">+12 345 6789</p>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="dark-box box-hover">
-      <h2><i class="fa fa-paper-plane"></i><span data-i18n="contact.email_label">Email</span></h2>
-      <p><a href="index.html#">info@themewagon.com</a></p>
-    </div>
-  </div>
-</div>
+          <!-- Tarjeta CV -->
+          <div class="col-md-6">
+            <div class="dark-box box-hover">
+              <h2><i class="fa fa-mobile"></i><span data-i18n="contact.phone_label">CV</span></h2>
+              <p>
+                <a id="cv-download-link" href="#" download data-i18n="contact.phone_value">Download my CV</a>
+              </p>
+            </div>
+          </div>
+          <!-- Tarjeta Email (ofuscado) -->
+          <div class="col-md-6">
+            <div class="dark-box box-hover">
+              <h2><i class="fa fa-paper-plane"></i><span data-i18n="contact.email_label">Email</span></h2>
+              <p id="email-container">
+                <a id="email-link" href="#">Cargando...</a>
+              </p>
+            </div>
+          </div>
+        </div> <!-- .row.contact-details -->
+
+        <!-- MAPA Y FORMULARIO -->
         <div class="row">
           <div class="col-md-6">
             <div id="googlemaps"></div>
@@ -501,7 +500,6 @@
       </div>
     </section>
 
-
     <!-- FOOTER -->
     <footer>
       <div class="container">
@@ -512,7 +510,6 @@
         </div>
       </div>
     </footer>
-
 
     <!-- Scripts originales del tema -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -528,20 +525,14 @@
     <script src="js/main.js"></script>
     <script src="js/script.js"></script>
 
-    <!-- ============================================================
-         FIX: i18next cargado ANTES del bloque que lo utiliza.
-         - i18next: núcleo de la librería de traducción
-         - http-backend: carga los archivos JSON de /locales/
-         - browser-languagedetector: detecta el idioma del navegador
-    ============================================================ -->
+    <!-- i18next y sus plugins -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/23.11.5/i18next.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-http-backend/2.5.2/i18nextHttpBackend.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-browser-languagedetector/7.2.1/i18nextBrowserLanguageDetector.min.js"></script>
 
     <script>
       // ----------------------------------------------------------------
-      // FIX 1: Dark mode toggle — agrega/quita .dark-mode en <body>
-      // y persiste la preferencia en localStorage.
+      // Dark mode toggle
       // ----------------------------------------------------------------
       function toggleDarkMode() {
         var isDark = document.body.classList.toggle('dark-mode');
@@ -549,14 +540,8 @@
         document.getElementById('btn-dark-mode').textContent = isDark ? '🌙' : '☀️';
       }
 
-      // ----------------------------------------------------------------
-      // FIX 2: Restaurar dark mode al recargar la página SIN parpadeo.
-      // La clase se aplica directamente en <body> (no en <html>),
-      // ya que todo el CSS usa el selector body.dark-mode.
-      // ----------------------------------------------------------------
       (function() {
         if (localStorage.getItem('darkMode') === '1') {
-          // Aplicar inmediatamente para evitar flash of unstyled content
           document.addEventListener('DOMContentLoaded', function() {
             document.body.classList.add('dark-mode');
             var btn = document.getElementById('btn-dark-mode');
@@ -565,92 +550,72 @@
         }
       })();
 
-      // ============================================================
-      // FIX 3: Inicialización de i18next — carga JSONs por HTTP
-      // y aplica traducciones al DOM. Gestiona cambio de idioma
-      // y persistencia de preferencia del usuario.
-      // ============================================================
-      // Función que aplica todas las traducciones al DOM recorriendo
-      // los elementos con el atributo [data-i18n]
-      function applyTranslations() {
-        document.querySelectorAll('[data-i18n]').forEach(function(el) {
-          var key = el.getAttribute('data-i18n');
-
-          if (key.startsWith('[html]')) {
-            // Modo HTML: inserta el valor como innerHTML (permite etiquetas <span>, <a>, etc.)
-            el.innerHTML = i18next.t(key.replace('[html]', ''));
-
-          } else if (key.startsWith('[placeholder]')) {
-            // Modo placeholder: traduce el atributo placeholder de inputs y textareas
-            el.setAttribute('placeholder', i18next.t(key.replace('[placeholder]', '')));
-
-          } else if (key.startsWith('[value]')) {
-            // Modo value: traduce el atributo value de botones tipo submit
-            el.setAttribute('value', i18next.t(key.replace('[value]', '')));
-
-          } else {
-            // Modo texto plano (el más común): reemplaza el textContent del elemento
-            el.textContent = i18next.t(key);
-          }
-        });
-
-        // Actualiza el atributo lang del <html> para accesibilidad y SEO
-        document.documentElement.lang = i18next.language;
-
-        // Reinicializa el rotador de texto con las nuevas palabras traducidas
+      // ----------------------------------------------------------------
+      // Text Rotator inicialización robusta (BUG 1)
+      // ----------------------------------------------------------------
+      function initTextRotator() {
         var $rotate = $('.rotate');
         if ($rotate.length && typeof $.fn.textrotator === 'function') {
-          $rotate.textrotator('destroy'); // Detiene la animación actual
+          if ($rotate.data('textrotator-instance')) {
+            $rotate.textrotator('destroy');
+          }
           $rotate.textrotator({
             animation: "fade",
             separator: ",",
             speed: 2000
           });
         }
+      }
 
-        // Actualiza los botones del selector para reflejar el idioma activo
+      $(document).ready(function() {
+        initTextRotator();
+      });
+
+      // ----------------------------------------------------------------
+      // i18next setup
+      // ----------------------------------------------------------------
+      function applyTranslations() {
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+          var key = el.getAttribute('data-i18n');
+          if (key.startsWith('[html]')) {
+            el.innerHTML = i18next.t(key.replace('[html]', ''));
+          } else if (key.startsWith('[placeholder]')) {
+            el.setAttribute('placeholder', i18next.t(key.replace('[placeholder]', '')));
+          } else if (key.startsWith('[value]')) {
+            el.setAttribute('value', i18next.t(key.replace('[value]', '')));
+          } else {
+            el.textContent = i18next.t(key);
+          }
+        });
+        document.documentElement.lang = i18next.language;
+        // Reiniciar rotador después de cambiar idioma (BUG 1)
+        initTextRotator();
         document.getElementById('btn-en').classList.toggle('active', i18next.language === 'en');
         document.getElementById('btn-es').classList.toggle('active', i18next.language === 'es');
       }
 
-      // Función pública llamada al hacer clic en los botones EN / ES
       function switchLang(lang) {
         i18next.changeLanguage(lang, function() {
           applyTranslations();
-          // Guarda la preferencia del usuario en localStorage para futuras visitas
           localStorage.setItem('preferredLang', lang);
         });
       }
 
-      // Inicialización de i18next al cargar la página
       i18next
-        .use(i18nextHttpBackend)           // Plugin para cargar JSONs por HTTP
-        .use(i18nextBrowserLanguageDetector) // Plugin para detectar idioma del navegador
+        .use(i18nextHttpBackend)
+        .use(i18nextBrowserLanguageDetector)
         .init({
-          // Idioma por defecto si no se detecta ninguno
           fallbackLng: 'en',
-          // Idiomas soportados
           supportedLngs: ['en', 'es'],
-          // Ruta donde están los archivos de traducción JSON
-          // Estructura esperada: /locales/en/translation.json y /locales/es/translation.json
-          backend: {
-            loadPath: 'locales/{{lng}}/translation.json'
-          },
-          // Opciones del detector de idioma del navegador
+          backend: { loadPath: 'locales/{{lng}}/translation.json' },
           detection: {
-            // Orden de prioridad: primero localStorage, luego el idioma del navegador
             order: ['localStorage', 'navigator'],
             lookupLocalStorage: 'preferredLang'
           },
-          // Permite usar claves con puntos (ej: "nav.home") como rutas anidadas en el JSON
           keySeparator: '.',
-          // No escapar HTML en los valores (necesario para claves con [html])
           interpolation: { escapeValue: false }
         }, function(err) {
-          if (err) {
-            console.warn('i18next: error al cargar traducciones', err);
-          }
-          // Una vez cargadas las traducciones, aplica los textos al DOM
+          if (err) console.warn('i18next error:', err);
           applyTranslations();
         });
     </script>
@@ -670,12 +635,40 @@
       }
     </script>
 
-    <!-- Text Rotator (inicialización base; i18next la reinicializa en cada cambio de idioma) -->
+    <!-- Email ofuscado -->
+    <script>
+      (function() {
+        var user = "eliasnicolasflandez88";
+        var domain = "gmail";
+        var tld = "com";
+        var email = user + "@" + domain + "." + tld;
+        var container = document.getElementById("email-container");
+        var link = document.getElementById("email-link");
+        if (link) {
+          link.href = "mailto:" + email;
+          link.textContent = email;
+        } else if (container) {
+          container.textContent = email;
+        }
+      })();
+    </script>
+
+    <!-- Descarga del CV -->
+    <script>
+      (function() {
+        var cvLink = document.getElementById('cv-download-link');
+        if (cvLink) {
+          cvLink.href = 'assets/docs/elias_nicolas_flandez_cv_python.pdf';
+          cvLink.setAttribute('download', '');
+        }
+      })();
+    </script>
+
+    <!-- Text Rotator (respaldo) -->
     <script type="text/javascript">
-      $(".rotate").textrotator({
-        animation: "fade",
-        separator: ",",
-        speed: 2000
+      $(document).ready(function() {
+        // Aseguramos que el rotador se inicie también si por algún motivo falló antes
+        initTextRotator();
       });
     </script>
 

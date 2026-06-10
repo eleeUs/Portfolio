@@ -75,10 +75,8 @@
   },
   "contact": {
     "title": "Drop <span>me</span> a line",
-    "address_label": "Address",
-    "address_value": "23 Ipsum street, New York",
-    "phone_label": "Phone",
-    "phone_value": "+12 345 6789",
+    "phone_label": "CV",
+    "phone_value": "Download my CV",
     "email_label": "Email",
     "form_name": "Your name",
     "form_email": "Email address",
