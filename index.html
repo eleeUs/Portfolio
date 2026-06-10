@@ -33,9 +33,9 @@
         align-items: center;
       }
       #ui-controls button {
-        background: rgba(255,255,255,0.15);
-        color: #fff;
-        border: 1px solid rgba(255,255,255,0.5);
+        background: rgba(75, 48, 48, 0.15);
+        color: #220303;
+        border: 1px solid rgba(110, 0, 0, 0.5);
         padding: 4px 12px;
         border-radius: 3px;
         cursor: pointer;
@@ -210,7 +210,7 @@
                 <span style="color:#E04343;">Fl</span>and</span><span style="color:#E04343;">ez<br/>
               </h1>
               <!-- Subtítulo con rotación automática de texto entre los roles del autor -->
-              <h3 class="animated fadeInUp delay-05s"><span class="rotate">Python,FastAPI,Django</span></h3>
+              <h3 class="animated fadeInUp delay-03s"><span class="rotate">Python,FastAPI,Django</span></h3>
             </div>
           </div>
 
@@ -253,7 +253,7 @@
           <div class="col-md-12">
             <div class="services">
               <div class="col-md-4 wp2 item">
-                <div class="icon"><i class="fa fa-camera"></i></div>
+                <div class="icon"><i class="fa fa-desktop"></i></div>
                 <h2 data-i18n="services.photographer.title">Photographer</h2>
                 <p data-i18n="services.photographer.text">Lorem ipsum...</p>
               </div>
@@ -446,25 +446,21 @@
           </div>
         </div>
         <div class="row contact-details">
-          <div class="col-md-4">
-            <div class="dark-box box-hover">
-              <h2><i class="fa fa-map-marker"></i><span data-i18n="contact.address_label">Address</span></h2>
-              <p data-i18n="contact.address_value">23 Ipsum street, New York</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="dark-box box-hover">
-              <h2><i class="fa fa-mobile"></i><span data-i18n="contact.phone_label">Phone</span></h2>
-              <p data-i18n="contact.phone_value">+12 345 6789</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="dark-box box-hover">
-              <h2><i class="fa fa-paper-plane"></i><span data-i18n="contact.email_label">Email</span></h2>
-              <p><a href="index.html#">info@themewagon.com</a></p>
-            </div>
-          </div>
-        </div>
+  <!-- Se ha eliminado la tarjeta de "Address" para dar más espacio a Phone y Email -->
+  <!-- Cada tarjeta usaba col-md-4; ahora usamos col-md-6 para que ocupen 50% cada una -->
+  <div class="col-md-6">
+    <div class="dark-box box-hover">
+      <h2><i class="fa fa-mobile"></i><span data-i18n="contact.phone_label">Phone</span></h2>
+      <p data-i18n="contact.phone_value">+12 345 6789</p>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="dark-box box-hover">
+      <h2><i class="fa fa-paper-plane"></i><span data-i18n="contact.email_label">Email</span></h2>
+      <p><a href="index.html#">info@themewagon.com</a></p>
+    </div>
+  </div>
+</div>
         <div class="row">
           <div class="col-md-6">
             <div id="googlemaps"></div>

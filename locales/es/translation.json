@@ -19,15 +19,15 @@
     "title": "Hago cosas increíbles para mis clientes",
     "photographer": {
       "title": "Backend",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+      "text": "Tengo una base sólida en Python, y he trabajado con Django y FastAPI para construir APIs funcionales y bien documentadas. También manejo PostgreSQL para el diseño de esquemas, consultas optimizadas y relaciones básicas."
     },
     "webdesigner": {
       "title": "Frontend",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+      "text": "Tengo un buen dominio de HTML5, CSS3 y JavaScript (ES6+), lo que me permite maquetar interfaces limpias, responsivas y con interacciones básicas. Además, uso Bootstrap para agilizar el desarrollo y garantizar que los diseños se adapten correctamente a diferentes dispositivos."
     },
-    "artist": {
-      "title": "Animador",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+      "artist": {
+      "title": "Habilidades blandas",
+      "text": "Me considero una persona muy atenta a los detalles, con iniciativa para investigar soluciones y mucha disposición para recibir feedback y mejorar. Me gusta trabajar en equipo, compartir lo que sé, pedir ayuda cuando la necesito y aprender de los más experimentados."
     }
   },
   "about_blocks": {
@@ -51,7 +51,7 @@
     "title": "Proyectos <span>recientes</span>"
   },
   "cta": {
-    "button": "contratar a john doe"
+    "button": "contratar a Elias"
   },
   "blog": {
     "title": "Mi <span>pequeño</span> blog",

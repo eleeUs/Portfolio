@@ -18,22 +18,22 @@
   "services": {
     "title": "I do amazing things for clients",
     "photographer": {
-      "title": "Python Developer",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+      "title": "Backend",
+      "text": " I am an aspiring backend developer with a solid foundation in Python and hands-on experience building RESTful APIs using Django and FastAPI. I have worked with PostgreSQL for database design, including schema definition, query optimization, and basic relationship management."
     },
     "webdesigner": {
-      "title": "FastAPI Developer",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+      "title": "Frontend",
+      "text": "I am a junior frontend developer with a good command of HTML5, CSS3, and modern JavaScript (ES6+). I use Bootstrap to build responsive, mobile-first interfaces efficiently. My focus is on creating clean, user-friendly layouts with attention to detail and basic interactivity. I understand the importance of cross-browser compatibility and accessibility."
     },
     "artist": {
-      "title": "Django Developer",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+      "title": "Softskills",
+      "text": "I bring strong problem-solving skills, a commitment to writing clean and maintainable code.I am eager to contribute to real-world projects, learn from senior engineers, and grow within a collaborative, feedback-driven environment.I am ready to apply my energy and dedication to delivering quality solutions in a professional setting."
     }
   },
   "about_blocks": {
     "block1": {
       "title": "High qualit",
-      "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
+      "text": " I bring strong problem-solving skills, a commitment to writing clean and maintainable code.I am eager to contribute to real-world projects, learn from senior engineers, and grow within a collaborative, feedback-driven environment.I am ready to apply my energy and dedication to delivering quality solutions in a professional setting.",
       "readmore": "Read more"
     },
     "block2": {
@@ -51,7 +51,7 @@
     "title": "Recent <span>Projects</span>"
   },
   "cta": {
-    "button": "hire john doe"
+    "button": "hire Elias"
   },
   "blog": {
     "title": "My <span>little</span> blog",
