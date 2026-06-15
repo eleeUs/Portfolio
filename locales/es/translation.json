@@ -4,7 +4,7 @@
     "about": "Sobre mí",
     "service": "Servicios",
     "portfolio": "Portafolio",
-    "blog": "Blog",
+    "blog": "Stack Tecnológico",
     "contact": "Contacto"
   },
   "hero": {
@@ -54,13 +54,13 @@
     "button": "contratar a Elias"
   },
   "blog": {
-    "title": "Mi <span>pequeño</span> blog",
-    "entry1": { "title": "Mentes creativas", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero." },
-    "entry2": { "title": "Corazones creativos", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero." },
-    "entry3": { "title": "Ideas creativas", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero." },
-    "entry4": { "title": "Mentes creativas", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero." },
-    "entry5": { "title": "Corazones creativos", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero." },
-    "entry6": { "title": "Ideas creativas", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero." }
+    "title": "Mi <span>stack</span> tecnológico",
+    "entry1": { "title": "Python", "text": "Porque sirve como base para cualquier proyecto que requiera rapidez de desarrollo, legibilidad y un ecosistema maduro. Ideal para APIs, procesamiento de datos, automatizaciones o MVPs." },
+    "entry2": { "title": "Django", "text": "Para proyectos monolíticos con CRUD complejo, autenticación, panel de admin, ORM potente y seguridad por defecto." },
+    "entry3": { "title": "FastAPI", "text": "Para APIs puras, de alto rendimiento, con documentación automática, validación de datos y concurrencia asíncrona." },
+    "entry4": { "title": "PostgreSQL", "text": "Para bases de datos relacionales complejas con soporte para transacciones, índices y consultas avanzadas." },
+    "entry5": { "title": "JavaScript + CSS + HTML5", "text": "Para crear interfaces de usuario dinámicas y responsivas con un buen diseño y experiencia del usuario." },
+    "entry6": { "title": "Bootstrap", "text": "Para desarrollar interfaces web responsivas y consistentes con un enfoque en la usabilidad." }
   },
   "clients": {
     "title": "Lo que dicen nuestros clientes",
@@ -69,7 +69,7 @@
     "testimonial3": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. <br><small>- Tom Davis, GreenWonder</small>"
   },
   "newsletter": {
-    "title": "Suscríbete a nuestro boletín",
+    "title": "Solicita asesoría para tu proyecto aquí",
     "placeholder": "Tu correo electrónico",
     "button": "Enviar"
   },

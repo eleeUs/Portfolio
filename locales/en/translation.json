@@ -4,7 +4,7 @@
     "about": "About",
     "service": "Service",
     "portfolio": "Portfolio",
-    "blog": "Blog",
+    "blog": "Tech Stack",
     "contact": "Contact"
   },
   "hero": {
@@ -23,29 +23,13 @@
     },
     "webdesigner": {
       "title": "Frontend",
-      "text": "I am a junior frontend developer with a good command of HTML5, CSS3, and modern JavaScript (ES6+). I use Bootstrap to build responsive, mobile-first interfaces efficiently. My focus is on creating clean, user-friendly layouts with attention to detail and basic interactivity. I understand the importance of cross-browser compatibility and accessibility."
+      "text": "I am a frontend developer with a good command of HTML5, CSS3, and modern JavaScript (ES6+). I use Bootstrap to build responsive, mobile-first interfaces efficiently. My focus is on creating clean, user-friendly layouts with attention to detail and basic interactivity. I understand the importance of cross-browser compatibility and accessibility."
     },
     "artist": {
       "title": "Softskills",
       "text": "I bring strong problem-solving skills, a commitment to writing clean and maintainable code.I am eager to contribute to real-world projects, learn from senior engineers, and grow within a collaborative, feedback-driven environment.I am ready to apply my energy and dedication to delivering quality solutions in a professional setting."
     }
-  },
-  "about_blocks": {
-    "block1": {
-      "title": "High qualit",
-      "text": " I bring strong problem-solving skills, a commitment to writing clean and maintainable code.I am eager to contribute to real-world projects, learn from senior engineers, and grow within a collaborative, feedback-driven environment.I am ready to apply my energy and dedication to delivering quality solutions in a professional setting.",
-      "readmore": "Read more"
-    },
-    "block2": {
-      "title": "Professional Photography",
-      "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
-      "readmore": "Read more"
-    },
-    "block3": {
-      "title": "3D Modeling and Animations",
-      "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
-      "readmore": "Read more"
-    }
+
   },
   "portfolio": {
     "title": "Recent <span>Projects</span>"
@@ -54,13 +38,13 @@
     "button": "hire Elias"
   },
   "blog": {
-    "title": "My <span>little</span> blog",
-    "entry1": { "title": "Creative Minds", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero." },
-    "entry2": { "title": "Creative Hearts", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero." },
-    "entry3": { "title": "Creative Ideas", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero." },
-    "entry4": { "title": "Creative Minds", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero." },
-    "entry5": { "title": "Creative Hearts", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero." },
-    "entry6": { "title": "Creative Ideas", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero." }
+    "title": "My <span>tech</span> stack",
+    "entry1": { "title": "Python", "text": "Because it serves as a foundation for any project that requires rapid development, readability, and a mature ecosystem. Ideal for APIs, data processing, automation, or MVPs." },
+    "entry2": { "title": "Django", "text": "For monolithic projects with complex CRUD, authentication, admin panel, powerful ORM, and security by default." },
+    "entry3": { "title": "FastAPI", "text": "For pure APIs, high performance, with automatic documentation, data validation, and asynchronous concurrency." },
+    "entry4": { "title": "PostgreSQL", "text": "For complex relational databases with support for transactions, indexes, and advanced queries." },
+    "entry5": { "title": "JavaScript + CSS + HTML5", "text": "For creating dynamic and responsive user interfaces with a good design and user experience." },
+    "entry6": { "title": "Bootstrap", "text": "For developing responsive and consistent web interfaces with a focus on usability." }
   },
   "clients": {
     "title": "What our clients said",
@@ -69,7 +53,7 @@
     "testimonial3": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. <br><small>- Tom Davis, GreenWonder</small>"
   },
   "newsletter": {
-    "title": "Subscribe to our Newsletter",
+    "title": "Request advice for your project here",
     "placeholder": "Your email address",
     "button": "Send"
   },
