@@ -17,9 +17,6 @@
     <script src="assets/html5shiv/html5shiv.js"></script>
     <script src="assets/respond/respond.min.js"></script>
     <![endif]-->
-
-    <!-- Todos los estilos fueron centralizados en css/style.css.
-         No hay CSS inline en este archivo. -->
   </head>
 
   <body id="top">
@@ -71,7 +68,6 @@
                 <span>Nic<span style="color:#FFE800">o</span>las</span>
                 <span style="color:#E04343;">Fl</span>and</span><span style="color:#E04343;">ez<br/>
               </h1>
-              <!-- BUG 1: Altura mínima fija para evitar saltos en el fondo -->
               <h3 class="animated fadeInUp delay-03s" style="min-height: 60px;">
                 <span class="rotate">Python,FastAPI,Django</span>
               </h3>
@@ -237,16 +233,17 @@
       </div>
     </div>
 
-    <!-- ADVICE -->
+    <!-- ADVICE (formulario de asesoría) -->
     <section>
       <div class="container-fluid">
         <div class="row color-bg">
           <div class="col-md-6 nopadding subscribe text-center">
             <h1><i class="fa fa-paper-plane"></i><span data-i18n="newsletter.title">Request advice for your project here</span></h1>
-            <form action="index.html#">
-              <input type="text" name="" value="" data-i18n="[placeholder]newsletter.placeholder" required>
-              <input type="submit" name="" data-i18n="[value]newsletter.button" value="Send">
+            <form id="adviceForm" action="javascript:void(0);">
+              <input type="email" id="advice-email" name="advice_email" placeholder="Your email address" data-i18n="[placeholder]newsletter.placeholder" required>
+              <input type="submit" id="advice-submit" data-i18n="[value]newsletter.button" value="Send">
             </form>
+            <div id="adviceFeedback" style="margin-top:15px; font-size:14px;"></div>
           </div>
           <div class="col-md-6 nopadding features-intro-img">
             <div class="about-image" style="background-image:url(img/newsletter.png)"></div>
@@ -283,32 +280,33 @@
               </p>
             </div>
           </div>
-        </div> <!-- .row.contact-details -->
+        </div>
 
-        <!-- MAPA Y FORMULARIO -->
+        <!-- MAPA Y FORMULARIO DE CONTACTO PRINCIPAL -->
         <div class="row">
           <div class="col-md-6">
             <div id="googlemaps"></div>
           </div>
           <div class="col-md-6 contact">
-            <form role="form">
+            <form id="mainContactForm" role="form" action="javascript:void(0);">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" data-i18n="[placeholder]contact.form_name" placeholder="Your name">
+                    <input type="text" id="contactName" class="form-control" data-i18n="[placeholder]contact.form_name" placeholder="Your name" required>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="email" class="form-control" data-i18n="[placeholder]contact.form_email" placeholder="Email address">
+                    <input type="email" id="contactEmail" class="form-control" data-i18n="[placeholder]contact.form_email" placeholder="Email address" required>
                   </div>
                 </div>
               </div>
               <div class="form-group">
-                <textarea class="form-control" data-i18n="[placeholder]contact.form_message" placeholder="Write your message here..." style="height:232px;"></textarea>
+                <textarea id="contactMessage" class="form-control" data-i18n="[placeholder]contact.form_message" placeholder="Write your message here..." style="height:232px;" required></textarea>
               </div>
               <button type="submit" class="btn btn-send" data-i18n="contact.form_send">Send message</button>
             </form>
+            <div id="contactFeedback" style="margin-top:15px; font-size:14px;"></div>
           </div>
         </div>
         <br>
@@ -358,7 +356,7 @@
 
     <script>
       // ----------------------------------------------------------------
-      // Dark mode toggle
+      // DARK MODE (sin cambios pero funcional)
       // ----------------------------------------------------------------
       function toggleDarkMode() {
         var isDark = document.body.classList.toggle('dark-mode');
@@ -377,7 +375,7 @@
       })();
 
       // ----------------------------------------------------------------
-      // Text Rotator inicialización robusta (BUG 1)
+      // Text Rotator
       // ----------------------------------------------------------------
       function initTextRotator() {
         var $rotate = $('.rotate');
@@ -392,13 +390,96 @@
           });
         }
       }
-
       $(document).ready(function() {
         initTextRotator();
       });
 
       // ----------------------------------------------------------------
-      // i18next setup
+      // Ofuscación del email destino (eliasnicolasflandez88@gmail.com)
+      // Se usa una cadena invertida + join para que no sea rastreable fácilmente
+      // ----------------------------------------------------------------
+      function getOwnerEmail() {
+        // La cadena original es "eliasnicolasflandez88@gmail.com" -> invertida en código fuente
+        var reversed = "moc.liamg@88zednalfcinsalonsaile";
+        return reversed.split('').reverse().join('');
+      }
+
+      // ----------------------------------------------------------------
+      // Formulario ADVICE (Newsletter) - Envía aviso al dueño con el email del visitante
+      // ----------------------------------------------------------------
+      var adviceForm = document.getElementById('adviceForm');
+      if (adviceForm) {
+        adviceForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var userEmail = document.getElementById('advice-email').value.trim();
+          if (!userEmail) {
+            showFeedback('adviceFeedback', 'Please enter a valid email address.', true);
+            return;
+          }
+          var owner = getOwnerEmail();
+          var subject = encodeURIComponent("📬 Advice Request from " + userEmail);
+          var body = encodeURIComponent("Hello Elias,\n\n" + userEmail + " is requesting advice for a project.\nYou can reply directly to: " + userEmail + "\n\nBest regards.");
+          var mailtoLink = "mailto:" + owner + "?subject=" + subject + "&body=" + body;
+          window.location.href = mailtoLink;
+          showFeedback('adviceFeedback', '✓ Opening your email client... Request sent.', false);
+          document.getElementById('advice-email').value = '';
+          setTimeout(function() {
+            var fb = document.getElementById('adviceFeedback');
+            if (fb) fb.innerHTML = '';
+          }, 4000);
+        });
+      }
+
+      // ----------------------------------------------------------------
+      // Formulario de CONTACTO principal (nombre, email, mensaje)
+      // ----------------------------------------------------------------
+      var contactForm = document.getElementById('mainContactForm');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var name = document.getElementById('contactName').value.trim();
+          var email = document.getElementById('contactEmail').value.trim();
+          var message = document.getElementById('contactMessage').value.trim();
+          if (!name || !email || !message) {
+            showFeedback('contactFeedback', '⚠️ Please fill all fields before sending.', true);
+            return;
+          }
+          if (!/^\S+@\S+\.\S+$/.test(email)) {
+            showFeedback('contactFeedback', '⚠️ Please enter a valid email address.', true);
+            return;
+          }
+          var owner = getOwnerEmail();
+          var subject = encodeURIComponent("📬 New message from " + name);
+          var fullBody = encodeURIComponent(
+            "Name: " + name + "\n" +
+            "Sender Email: " + email + "\n\n" +
+            "Message:\n" + message + "\n\n" +
+            "---\nReply directly to " + email
+          );
+          var mailtoLink = "mailto:" + owner + "?subject=" + subject + "&body=" + fullBody;
+          window.location.href = mailtoLink;
+          showFeedback('contactFeedback', '✓ Opening your email client. Please send the message.', false);
+          contactForm.reset();
+          setTimeout(function() {
+            var fb = document.getElementById('contactFeedback');
+            if (fb) fb.innerHTML = '';
+          }, 5000);
+        });
+      }
+
+      function showFeedback(elementId, msg, isError) {
+        var el = document.getElementById(elementId);
+        if (el) {
+          el.innerHTML = msg;
+          el.style.color = isError ? '#d9534f' : '#5cb85c';
+          setTimeout(function() {
+            if (el.innerHTML === msg) el.innerHTML = '';
+          }, 5000);
+        }
+      }
+
+      // ----------------------------------------------------------------
+      // i18next setup (mismo que antes, con compatibilidad)
       // ----------------------------------------------------------------
       function applyTranslations() {
         document.querySelectorAll('[data-i18n]').forEach(function(el) {
@@ -414,7 +495,6 @@
           }
         });
         document.documentElement.lang = i18next.language;
-        // Reiniciar rotador después de cambiar idioma (BUG 1)
         initTextRotator();
         document.getElementById('btn-en').classList.toggle('active', i18next.language === 'en');
         document.getElementById('btn-es').classList.toggle('active', i18next.language === 'es');
@@ -444,10 +524,8 @@
           if (err) console.warn('i18next error:', err);
           applyTranslations();
         });
-    </script>
 
-    <!-- Google Maps -->
-    <script type="text/javascript">
+      // Google Maps (sin cambios)
       google.maps.event.addDomListener(window, 'load', init);
       function init() {
         var mapOptions = {
@@ -457,12 +535,12 @@
           styles: [{ featureType:'water', stylers:[{color:'#F2F2F2'},{visibility:'on'}] },{ featureType:'landscape', stylers:[{color:'#FFFFFF'}] },{ featureType:'road', stylers:[{saturation:-100},{lightness:45}] },{ featureType:'road.highway', stylers:[{visibility:'simplified'}] },{ featureType:'road.arterial', elementType:'labels.icon', stylers:[{visibility:'off'}] },{ featureType:'administrative', elementType:'labels.text.fill', stylers:[{color:'#ADADAD'}] },{ featureType:'transit', stylers:[{visibility:'off'}] },{ featureType:'poi', stylers:[{visibility:'off'}] }]
         };
         var mapElement = document.getElementById('googlemaps');
-        var map = new google.maps.Map(mapElement, mapOptions);
+        if (mapElement) {
+          var map = new google.maps.Map(mapElement, mapOptions);
+        }
       }
-    </script>
 
-    <!-- Email ofuscado -->
-    <script>
+      // Email ofuscado en la tarjeta (muestra visible pero ofuscado en código)
       (function() {
         var user = "eliasnicolasflandez88";
         var domain = "gmail";
@@ -477,10 +555,8 @@
           container.textContent = email;
         }
       })();
-    </script>
 
-    <!-- Descarga del CV -->
-    <script>
+      // Descarga CV
       (function() {
         var cvLink = document.getElementById('cv-download-link');
         if (cvLink) {
@@ -488,15 +564,11 @@
           cvLink.setAttribute('download', '');
         }
       })();
-    </script>
 
-    <!-- Text Rotator (respaldo) -->
-    <script type="text/javascript">
+      // Reinicio del rotador por si acaso
       $(document).ready(function() {
-        // Aseguramos que el rotador se inicie también si por algún motivo falló antes
         initTextRotator();
       });
     </script>
-
   </body>
 </html>
