@@ -1235,6 +1235,7 @@ ul.slides li {
 	.subscribe {
 	    padding-bottom: 40px;
 	}
+<<<<<<< HEAD
 }
 
 /* ============================================================
@@ -1474,3 +1475,184 @@ body.dark-mode .wrapper { background: #1a1a1a; }
 #portfolio.swag {
   padding-top: 50px;
 }
+=======
+}
+
+/* ============================================================
+   UI CONTROLS - SELECTOR DE IDIOMA + BOTON DARK MODE
+   Barra fija en la esquina superior derecha.
+   Movido desde el <style> inline del HTML para centralizar
+   todo el CSS en este archivo.
+============================================================ */
+#ui-controls {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+#ui-controls button,
+#ui-controls a {
+  background: rgba(75, 48, 48, 0.15);
+  color: #220303;
+  border: 1px solid rgba(110, 0, 0, 0.5);
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: background 0.2s;
+  font-family: "Varela Round", sans-serif;
+  text-decoration: none;
+}
+#ui-controls button:hover,
+#ui-controls button.active,
+#ui-controls a:hover {
+  background: rgba(255,255,255,0.35);
+}
+#ui-controls .separator {
+  width: 24px;
+  height: 1px;
+  background: rgba(255,255,255,0.35);
+}
+#btn-dark-mode { font-size: 15px; }
+#btn-repo { font-family: 'Courier New', monospace; font-weight: bold; }
+
+
+/* ============================================================
+   TRANSICION GLOBAL
+   Suaviza los cambios de color al alternar dark mode.
+   Se aplica a body y todos sus hijos para evitar saltos
+   visuales bruscos al agregar/quitar la clase .dark-mode.
+============================================================ */
+body, body * {
+  transition: background-color 0.3s ease, color 0.3s ease,
+              border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+
+/* ============================================================
+   DARK MODE
+   Todas las reglas se activan cuando JavaScript agrega la
+   clase "dark-mode" al <body> mediante toggleDarkMode().
+   El estado se persiste en localStorage bajo la clave
+   "darkMode" (valor "1" = oscuro, "0" = claro).
+============================================================ */
+body.dark-mode #preloader { background-color: #121212; }
+body.dark-mode { background-color: #121212; color: #c9c9c9; }
+body.dark-mode a { color: #e06060; }
+body.dark-mode a:hover, body.dark-mode a:focus { color: #f0c040; }
+body.dark-mode p { color: #9a9a9a; }
+body.dark-mode h1 { color: #e0e0e0; }
+body.dark-mode h2 { color: #d0d0d0 !important; }
+body.dark-mode h2::after { border-color: #3a3a3a; }
+body.dark-mode h6 { color: #888888; }
+body.dark-mode h6::after { border-color: #3a3a3a; }
+body.dark-mode .light-bg,
+body.dark-mode .dark-bg,
+body.dark-mode section,
+body.dark-mode .features,
+body.dark-mode .swag,
+body.dark-mode .contact-wrap { background-color: #121212; }
+
+/* -- Header (.hero) ------------------------------------------
+   La imagen de fondo se define en .hero (linea ~456) como:
+     background: url('../img/header-bg.jpg') right bottom no-repeat;
+   En dark mode sobreescribimos SOLO background-image para
+   cargar la version oscura, conservando posicion, repeat y
+   background-size: contain que ya estan en la regla base.
+   Se requiere !important para ganar sobre el shorthand
+   background: ... de mayor especificidad en la cascada.
+------------------------------------------------------------- */
+body.dark-mode .hero {
+  background-color: #161616;
+  background-image: url('../img/header-bg-dark.jpg') !important;
+}
+
+body.dark-mode .hero h1 { color: #e0e0e0; }
+body.dark-mode .hero h1 span { color: #555; }
+body.dark-mode h1.arrow { color: #d0d0d0; }
+body.dark-mode h1.arrow span { color: #E04343; }
+body.dark-mode .menu-wrap { background: #1a1a1a; }
+body.dark-mode .icon-list a { color: #aaaaaa; }
+body.dark-mode .icon-list a:hover,
+body.dark-mode .icon-list a:focus { color: #E04343; }
+body.dark-mode .show-menu .menu-wrap { border-bottom-color: #E04343; }
+body.dark-mode .color-bg { background: #1e1e1e; }
+body.dark-mode .color-bg h6,
+body.dark-mode .color-bg p { color: #b0b0b0; }
+body.dark-mode .color-bg h6::after { border-color: #3a3a3a; }
+body.dark-mode .color-bg a { color: #FFE800; }
+body.dark-mode .color-bg .weight-outline-btn { color: #c0c0c0; border-color: #555; }
+body.dark-mode .color-bg .weight-outline-btn:hover { background: #333; color: #fff; border-color: transparent; }
+body.dark-mode .color-bg .flex-control-paging li a { background: #555; border-color: #555; }
+body.dark-mode .color-bg .flex-control-paging li a.flex-active { background: #FFE800; border-color: #FFE800; }
+body.dark-mode .about-text { background-color: #1a1a1a; }
+body.dark-mode .about-text h1 { color: #888; }
+body.dark-mode .services .icon { border-color: #E04343; color: #E04343; background: transparent; }
+body.dark-mode .services .item:hover .icon { background: #E04343; }
+body.dark-mode .intro { background-color: #1a1a1a; }
+body.dark-mode .dark-box { background: #1f1f1f; }
+body.dark-mode .contact-details h2 span { color: #888; }
+body.dark-mode .contact .form-control {
+  background-color: #1e1e1e;
+  color: #c9c9c9;
+  border-color: #3a3a3a;
+}
+body.dark-mode .contact .form-control:focus { border-color: #555; }
+body.dark-mode .contact .form-control::placeholder { color: #666; }
+body.dark-mode .btn-send { background: #E04343; color: #fff; }
+body.dark-mode .btn-send:hover { background: #FFE800; color: #E04343; }
+body.dark-mode .subscribe { background-color: #1e1e1e; }
+body.dark-mode .subscribe h1 { color: #d0d0d0; }
+body.dark-mode .subscribe input[type=text] {
+  background-color: rgba(255,255,255,0.05);
+  color: #aaa;
+  border-color: #FFE800;
+}
+body.dark-mode footer { background-color: #0d0d0d; }
+body.dark-mode footer p { color: #555; }
+body.dark-mode footer a { color: #555; }
+body.dark-mode .flex-control-paging li a { background: #444; border-color: #444; }
+body.dark-mode .flex-control-paging li a.flex-active { background: #E04343; border-color: #E04343; }
+body.dark-mode .wrapper { background: #1a1a1a; }
+
+
+/* ============================================================
+   FIX: Color "SEE MORE" visible sobre el fondo del header
+============================================================ */
+.hero .scrollto p[data-i18n="hero.see_more"] {
+  color: #ffffff !important;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+.hero .scrollto p[data-i18n="hero.see_more"]:hover {
+  color: #FFE800 !important;
+}
+
+
+/* ============================================================
+   FIX: Separacion entre tarjetas y mapa/formulario (contacto)
+============================================================ */
+.contact-details {
+  margin-bottom: 40px;
+}
+#googlemaps {
+  margin-top: 20px;
+  height: 300px;
+}
+@media (max-width: 768px) {
+  .contact-details {
+    margin-bottom: 20px;
+  }
+}
+>>>>>>> first-changes

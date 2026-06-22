@@ -30,6 +30,8 @@
       <button onclick="switchLang('es')" id="btn-es">ES</button>
       <div class="separator"></div>
       <button id="btn-dark-mode" onclick="toggleDarkMode()" title="Toggle dark mode">☀️</button>
+      <div class="separator"></div>
+      <a id="btn-repo" href="https://github.com/eleeUs/Portfolio" target="_blank" rel="noopener noreferrer" title="View repository on GitHub">&lt;/&gt;</a>
     </div>
 
     <!-- HEADER -->
@@ -68,7 +70,7 @@
                 <span>Nic<span style="color:#FFE800">o</span>las</span>
                 <span style="color:#E04343;">Fl</span>and</span><span style="color:#E04343;">ez<br/>
               </h1>
-              <h3 class="animated fadeInUp delay-03s" style="min-height: 60px;">
+              <h3 class="animated fadeInUp delay-05s" style="min-height: 60px;">
                 <span class="rotate">Python,FastAPI,Django</span>
               </h3>
             </div>
@@ -263,7 +265,7 @@
         </div>
         <div class="row contact-details">
           <!-- Tarjeta CV -->
-          <div class="col-md-6">
+           <div class="col-md-6">
             <div class="dark-box box-hover">
               <h2><i class="fa fa-mobile"></i><span data-i18n="contact.phone_label">CV</span></h2>
               <p>
@@ -313,8 +315,13 @@
         <div class="row">
           <div class="col-md-12">
             <ul class="social-buttons">
+<<<<<<< HEAD
               <li><a href="https://www.linkedin.com/in/elias-nicolas-flandez-mu%C3%B1oz-463266372/" class="social-btn"><i class="fa fa-linkedin-square"></i></a></li>
               <li><a href="https://github.com/eleeUs" class="social-btn"><i class="fa fa-github-square"></i></a></li>
+=======
+              <li><a href="https://github.com/eleeUs/Portfolio" class="social-btn"><i class="fa fa-github-square"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/elias-nicolas-flandez-mu%C3%B1oz-463266372/" class="social-btn"><i class="fa fa-linkedin-square"></i></a></li>
+>>>>>>> first-changes
             </ul>
           </div>
         </div>
@@ -326,7 +333,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <p><span data-i18n="footer.rights">All Rights Reserved.</span> &copy; 2015 <a href="http://www.themewagon.com">ThemeWagon</a></p>
+            <p><span data-i18n="footer.rights">No one Rights Reserved.</span> &copy; 2026 <a href="http://www.themewagon.com">ThemeWagon</a></p>
           </div>
         </div>
       </div>
@@ -376,27 +383,37 @@
       // ----------------------------------------------------------------
       function initTextRotator() {
         var $rotate = $('.rotate');
-        if ($rotate.length && typeof $.fn.textrotator === 'function') {
-          if ($rotate.data('textrotator-instance')) {
-            $rotate.textrotator('destroy');
+        if (!$rotate.length || typeof $.fn.textrotator !== 'function') return;
+        // El plugin simple-text-rotator reemplaza el texto del span por una
+        // sola palabra al inicializarse y NO tiene método 'destroy'. Si se
+        // vuelve a llamar más tarde (p.ej. cuando i18next termina de cargar),
+        // ya no encuentra comas para "rotar" y queda fijo en esa palabra.
+        // Por eso guardamos el texto original y lo restauramos antes de
+        // cada inicialización.
+        $rotate.each(function() {
+          var $el = $(this);
+          if ($el.data('original-text') === undefined) {
+            $el.data('original-text', $el.text());
+          } else {
+            $el.text($el.data('original-text'));
           }
-          $rotate.textrotator({
-            animation: "fade",
-            separator: ",",
-            speed: 2000
-          });
-        }
+        });
+        $rotate.textrotator({
+          animation: "fade",
+          separator: ",",
+          speed: 2000
+        });
       }
       $(document).ready(function() {
         initTextRotator();
       });
 
       // ----------------------------------------------------------------
-      // Ofuscación del email destino (eliasnicolasflandez88@gmail.com)
+      // Ofuscación del email destino 
       // Se usa una cadena invertida + join para que no sea rastreable fácilmente
       // ----------------------------------------------------------------
       function getOwnerEmail() {
-        // La cadena original es "eliasnicolasflandez88@gmail.com" -> invertida en código fuente
+        // La cadena original es  -> invertida en código fuente
         var reversed = "moc.liamg@88zednalfcinsalonsaile";
         return reversed.split('').reverse().join('');
       }
@@ -557,15 +574,11 @@
       (function() {
         var cvLink = document.getElementById('cv-download-link');
         if (cvLink) {
-          cvLink.href = 'assets/docs/elias_nicolas_flandez_cv_python.pdf';
+          cvLink.href = 'assets/docs/elias_nicolas_flandez_cv.pdf';
           cvLink.setAttribute('download', '');
         }
       })();
 
-      // Reinicio del rotador por si acaso
-      $(document).ready(function() {
-        initTextRotator();
-      });
     </script>
   </body>
 </html>
