@@ -65,7 +65,8 @@
     "form_name": "Your name",
     "form_email": "Email address",
     "form_message": "Write your message here...",
-    "form_send": "Send message"
+    "form_send": "Send message",
+    "form_sent": "Message sent"
   },
   "footer": {
     "rights": "All Rights Reserved."

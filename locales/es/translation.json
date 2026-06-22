@@ -81,7 +81,8 @@
     "form_name": "Tu nombre",
     "form_email": "Correo electrónico",
     "form_message": "Escribe tu mensaje aquí...",
-    "form_send": "Enviar mensaje"
+    "form_send": "Enviar mensaje",
+    "form_sent": "Mensaje enviado"
   },
   "footer": {
     "rights": "Todos los derechos reservados."
