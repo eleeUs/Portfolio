@@ -25,7 +25,585 @@
       ============================================================ */
       #ui-controls {
         position: fixed;
-        top: 16px;
+        top: 16px;<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Elias Nicolas Flandez - Developer</title>
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/lightbox/css/lightbox.css" rel="stylesheet">
+    <link href="assets/textrotator/simpletextrotator.css" rel="stylesheet">
+    <link href="assets/flexslider/flexslider.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <!--[if lt IE 9]>
+    <script src="assets/html5shiv/html5shiv.js"></script>
+    <script src="assets/respond/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body id="top">
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Barra de controles: idioma + tema oscuro -->
+    <div id="ui-controls">
+      <button onclick="switchLang('en')" id="btn-en" class="active">EN</button>
+      <button onclick="switchLang('es')" id="btn-es">ES</button>
+      <div class="separator"></div>
+      <button id="btn-dark-mode" onclick="toggleDarkMode()" title="Toggle dark mode">☀️</button>
+      <div class="separator"></div>
+      <a id="btn-repo" href="https://github.com/eleeUs/Portfolio" target="_blank" rel="noopener noreferrer" title="View repository on GitHub">&lt;/&gt;</a>
+    </div>
+
+    <!-- HEADER -->
+    <header id="home">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="menu-wrap">
+            <nav class="menu">
+              <div class="icon-list">
+                <a href="index.html#home"><i class="fa fa-fw fa-home"></i><span data-i18n="nav.home">Home</span></a>
+                <a href="index.html#about"><i class="fa fa-fw fa-quote-left"></i><span data-i18n="nav.about">About</span></a>
+                <a href="index.html#service"><i class="fa fa-fw fa-globe"></i><span data-i18n="nav.service">Service</span></a>
+                <a href="index.html#portfolio"><i class="fa fa-fw fa-picture-o"></i><span data-i18n="nav.portfolio">Portfolio</span></a>
+                <a href="index.html#blog"><i class="fa fa-fw fa-rss"></i><span data-i18n="nav.blog">Blog</span></a>
+                <a href="index.html#contact"><i class="fa fa-fw fa-envelope-o"></i><span data-i18n="nav.contact">Contact</span></a>
+              </div>
+            </nav>
+          </div>
+          <button class="menu-button" id="open-button"></button>
+        </div>
+      </div>
+
+      <section class="hero" id="hero">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-right navicon">
+              <a id="nav-toggle" class="nav_slide_button" href="index.html#"><span></span></a>
+            </div>
+          </div>
+
+          <!-- Nombre del autor con animación de entrada -->
+          <div class="row">
+            <div class="col-md-8 col-md-offset-1 inner">
+              <h1 class="animated fadeInDown">
+                El<span style="color:#E04343;">ia</span>s<br/>
+                <span>Nic<span style="color:#FFE800">o</span>las</span>
+                <span style="color:#E04343;">Fl</span>and</span><span style="color:#E04343;">ez<br/>
+              </h1>
+              <h3 class="animated fadeInUp delay-05s" style="min-height: 60px;">
+                <span class="rotate">Python,FastAPI,Django</span>
+              </h3>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+              <a href="index.html#about" class="scrollto wow fadeInUp delay-5s">
+                <p data-i18n="hero.see_more">SEE MORE</p>
+                <p class="scrollto--arrow"><img src="img/scroll-down.png" alt="scroll down arrow"></p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <!-- ABOUT -->
+    <section class="intro text-center section-padding color-bg" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 wp1">
+            <h1 class="arrow" data-i18n="[html]about.title">A little <span>about</span> me</h1>
+            <p data-i18n="[html]about.text">I am enough of an artist...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="features text-center section-padding" id="service">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="arrow" data-i18n="services.title">I do amazing things for clients</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="services">
+              <div class="col-md-4 wp2 item">
+                <div class="icon"><i class="fa fa-desktop"></i></div>
+                <h2 data-i18n="services.photographer.title">Photographer</h2>
+                <p data-i18n="services.photographer.text">Lorem ipsum...</p>
+              </div>
+              <div class="col-md-4 wp2 item delay-05s">
+                <div class="icon"><i class="fa fa-desktop"></i></div>
+                <h2 data-i18n="services.webdesigner.title">Web Designer</h2>
+                <p data-i18n="services.webdesigner.text">Lorem ipsum...</p>
+              </div>
+              <div class="col-md-4 wp2 item delay-1s">
+                <div class="icon"><i class="fa fa-cubes"></i></div>
+                <h2 data-i18n="services.artist.title">3D Artist</h2>
+                <p data-i18n="services.artist.text">Lorem ipsum...</p>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="swag text-center" id="portfolio">
+      <div class="container">
+        <div class="row">
+          <h1 class="arrow" data-i18n="[html]portfolio.title">Recent <span>Projects</span></h1>
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <div class="row row-offset-0">
+        <div class="col-md-3 col-sm-6"><div class="overlay-effect effects clearfix"><div class="img"><a href="img/portfolio/portfolio-01-large.jpg" data-lightbox="roadtrip" title="Project One"><img class="grayscale" src="img/portfolio/portfolio-01-thumbnail.jpg" alt="Portfolio Item"></a></div></div></div>
+        <div class="col-md-3 col-sm-6"><div class="overlay-effect effects clearfix"><div class="img"><a href="img/portfolio/portfolio-02-large.jpg" data-lightbox="roadtrip" title="Project Two"><img class="grayscale" src="img/portfolio/portfolio-02-thumbnail.jpg" alt="Portfolio Item"></a></div></div></div>
+        <div class="col-md-3 col-sm-6"><div class="overlay-effect effects clearfix"><div class="img"><a href="img/portfolio/portfolio-03-large.jpg" data-lightbox="roadtrip" title="Project Three"><img class="grayscale" src="img/portfolio/portfolio-03-thumbnail.jpg" alt="Portfolio Item"></a></div></div></div>
+        <div class="col-md-3 col-sm-6"><div class="overlay-effect effects clearfix"><div class="img"><a href="img/portfolio/portfolio-04-large.jpg" data-lightbox="roadtrip" title="Project Four"><img class="grayscale" src="img/portfolio/portfolio-04-thumbnail.jpg" alt="Portfolio Item"></a></div></div></div>
+        <div class="col-md-3 col-sm-6"><div class="overlay-effect effects clearfix"><div class="img"><a href="img/portfolio/portfolio-05-large.jpg" data-lightbox="roadtrip" title="Project Five"><img class="grayscale" src="img/portfolio/portfolio-05-thumbnail.jpg" alt="Portfolio Item"></a></div></div></div>
+        <div class="col-md-3 col-sm-6"><div class="overlay-effect effects clearfix"><div class="img"><a href="img/portfolio/portfolio-06-large.jpg" data-lightbox="roadtrip" title="Project Six"><img class="grayscale" src="img/portfolio/portfolio-06-thumbnail.jpg" alt="Portfolio Item"></a></div></div></div>
+        <div class="col-md-3 col-sm-6"><div class="overlay-effect effects clearfix"><div class="img"><a href="img/portfolio/portfolio-07-large.jpg" data-lightbox="roadtrip" title="Project Seven"><img class="grayscale" src="img/portfolio/portfolio-07-thumbnail.jpg" alt="Portfolio Item"></a></div></div></div>
+        <div class="col-md-3 col-sm-6"><div class="overlay-effect effects clearfix"><div class="img"><a href="img/portfolio/portfolio-08-large.jpg" data-lightbox="roadtrip" title="Project Eight"><img class="grayscale" src="img/portfolio/portfolio-08-thumbnail.jpg" alt="Portfolio Item"></a></div></div></div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="spacer-cta text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <a href="index.html#contact" class="outline-btn" data-i18n="cta.button">hire Elias</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STACK -->
+    <section class="text-center section-padding" id="blog">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="arrow" data-i18n="[html]blog.title">My <span>tech</span> stack</h1>
+          </div>
+        </div><br><br>
+        <div class="row">
+          <div id="blogSlider">
+            <ul class="slides">
+              <li>
+                <div class="col-md-4 wp4">
+                  <div class="overlay-effect effects clearfix"><div class="img"><img src="img/stack01.jpg" class="grayscale" alt="Blog Item"></div></div><br>
+                  <h2 data-i18n="blog.entry1.title">Python</h2>
+                  <p data-i18n="blog.entry1.text">Lorem ipsum...</p>
+                </div>
+                <div class="col-md-4 wp4 delay-05s">
+                  <div class="overlay-effect effects clearfix"><div class="img"><img src="img/stack02.jpg" class="grayscale" alt="Blog Item"></div></div><br>
+                  <h2 data-i18n="blog.entry2.title">Django</h2>
+                  <p data-i18n="blog.entry2.text">Lorem ipsum...</p>
+                </div>
+                <div class="col-md-4 wp4 delay-1s">
+                  <div class="overlay-effect effects clearfix"><div class="img"><img src="img/stack03.jpg" class="grayscale" alt="Blog Item"></div></div><br>
+                  <h2 data-i18n="blog.entry3.title">FastAPI</h2>
+                  <p data-i18n="blog.entry3.text">Lorem ipsum...</p>
+                </div>
+              </li>
+              <li>
+                <div class="col-md-4 wp4">
+                  <div class="overlay-effect effects clearfix"><div class="img"><img src="img/stack04.jpg" class="grayscale" alt="Blog Item"></div></div><br>
+                  <h2 data-i18n="blog.entry4.title">PostgreSQL</h2>
+                  <p data-i18n="blog.entry4.text">Lorem ipsum...</p>
+                </div>
+                <div class="col-md-4 wp4 delay-05s">
+                  <div class="overlay-effect effects clearfix"><div class="img"><img src="img/stack05.jpg" class="grayscale" alt="Blog Item"></div></div><br>
+                  <h2 data-i18n="blog.entry5.title">JavaScript + CSS + HTML5</h2>
+                  <p data-i18n="blog.entry5.text">Lorem ipsum...</p>
+                </div>
+                <div class="col-md-4 wp4 delay-1s">
+                  <div class="overlay-effect effects clearfix"><div class="img"><img src="img/stack06.jpg" class="grayscale" alt="Blog Item"></div></div><br>
+                  <h2 data-i18n="blog.entry6.title">Bootstrap</h2>
+                  <p data-i18n="blog.entry6.text">Lorem ipsum...</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENTS -->
+    <div class="container-fluid">
+      <div class="row color-bg">
+        <div class="col-md-6 nopadding features-intro-img wow fadeInLeft">
+          <div class="about-image" style="background-image:url(img/clients.png)"></div>
+        </div>
+        <div class="col-md-6 nopadding about-text">
+          <h6 data-i18n="clients.title">What our clients said</h6>
+          <div id="clientSlider">
+            <ul class="slides">
+              <li><p data-i18n="[html]clients.testimonial1">Testimonial 1</p></li>
+              <li><p data-i18n="[html]clients.testimonial2">Testimonial 2</p></li>
+              <li><p data-i18n="[html]clients.testimonial3">Testimonial 3</p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADVICE (formulario de asesoría) -->
+    <section>
+      <div class="container-fluid">
+        <div class="row color-bg">
+          <div class="col-md-6 nopadding subscribe text-center">
+            <h1><i class="fa fa-paper-plane"></i><span data-i18n="newsletter.title">Request advice for your project here</span></h1>
+            <form id="adviceForm" action="javascript:void(0);">
+              <input type="email" id="advice-email" name="advice_email" placeholder="Your email address" data-i18n="[placeholder]newsletter.placeholder" required>
+              <input type="submit" id="advice-submit" data-i18n="[value]newsletter.button" value="Send">
+            </form>
+            <div id="adviceFeedback" style="margin-top:15px; font-size:14px;"></div>
+          </div>
+          <div class="col-md-6 nopadding features-intro-img">
+            <div class="about-image" style="background-image:url(img/newsletter.png)"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="text-center section-padding contact-wrap" id="contact">
+      <a href="index.html#top" class="up-btn"><i class="fa fa-chevron-up"></i></a>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="arrow" data-i18n="[html]contact.title">Drop <span>me</span> a line</h1>
+          </div>
+        </div>
+        <div class="row contact-details">
+          <!-- Tarjeta CV -->
+           <div class="col-md-6">
+            <div class="dark-box box-hover">
+              <h2><i class="fa fa-mobile"></i><span data-i18n="contact.phone_label">CV</span></h2>
+              <p>
+                <a id="cv-download-link" href="#" download data-i18n="contact.phone_value">Download my CV</a>
+              </p>
+            </div>
+          </div>
+          <!-- Tarjeta Email (ofuscado) -->
+          <div class="col-md-6">
+            <div class="dark-box box-hover">
+              <h2><i class="fa fa-paper-plane"></i><span data-i18n="contact.email_label">Email</span></h2>
+              <p id="email-container">
+                <a id="email-link" href="#">Loading...</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAPA Y FORMULARIO DE CONTACTO PRINCIPAL -->
+        <div class="row">
+          <div class="col-md-6">
+            <div id="googlemaps"></div>
+          </div>
+          <div class="col-md-6 contact">
+            <form id="mainContactForm" role="form" action="javascript:void(0);">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" id="contactName" class="form-control" data-i18n="[placeholder]contact.form_name" placeholder="Your name" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="email" id="contactEmail" class="form-control" data-i18n="[placeholder]contact.form_email" placeholder="Email address" required>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <textarea id="contactMessage" class="form-control" data-i18n="[placeholder]contact.form_message" placeholder="Write your message here..." style="height:232px;" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-send" data-i18n="contact.form_send">Send message</button>
+            </form>
+            <div id="contactFeedback" style="margin-top:15px; font-size:14px;"></div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="social-buttons">
+              <li><a href="https://github.com/eleeUs/Portfolio" class="social-btn"><i class="fa fa-github-square"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/elias-nicolas-flandez-mu%C3%B1oz-463266372/" class="social-btn"><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p><span data-i18n="footer.rights">No one Rights Reserved.</span> &copy; 2026 <a href="http://www.themewagon.com">ThemeWagon</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts originales del tema -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/smoothscroll/smoothscroll.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="assets/flexslider/jquery.flexslider.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="assets/textrotator/jquery.simple-text-rotator.js"></script>
+    <script src="assets/lightbox/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeKBBPJTG3v5w3cNPAgM6ZsJiPyL1mP_o&amp;sensor=false"></script>
+    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- i18next y sus plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/23.11.5/i18next.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-http-backend/2.5.2/i18nextHttpBackend.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-browser-languagedetector/7.2.1/i18nextBrowserLanguageDetector.min.js"></script>
+
+    <script>
+      // ----------------------------------------------------------------
+      // DARK MODE (sin cambios pero funcional)
+      // ----------------------------------------------------------------
+      function toggleDarkMode() {
+        var isDark = document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', isDark ? '1' : '0');
+        document.getElementById('btn-dark-mode').textContent = isDark ? '🌙' : '☀️';
+      }
+
+      (function() {
+        if (localStorage.getItem('darkMode') === '1') {
+          document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('dark-mode');
+            var btn = document.getElementById('btn-dark-mode');
+            if (btn) btn.textContent = '🌙';
+          });
+        }
+      })();
+
+      // ----------------------------------------------------------------
+      // Text Rotator
+      // ----------------------------------------------------------------
+      function initTextRotator() {
+        var $rotate = $('.rotate');
+        if (!$rotate.length || typeof $.fn.textrotator !== 'function') return;
+        // El plugin simple-text-rotator reemplaza el texto del span por una
+        // sola palabra al inicializarse y NO tiene método 'destroy'. Si se
+        // vuelve a llamar más tarde (p.ej. cuando i18next termina de cargar),
+        // ya no encuentra comas para "rotar" y queda fijo en esa palabra.
+        // Por eso guardamos el texto original y lo restauramos antes de
+        // cada inicialización.
+        $rotate.each(function() {
+          var $el = $(this);
+          if ($el.data('original-text') === undefined) {
+            $el.data('original-text', $el.text());
+          } else {
+            $el.text($el.data('original-text'));
+          }
+        });
+        $rotate.textrotator({
+          animation: "fade",
+          separator: ",",
+          speed: 2000
+        });
+      }
+      $(document).ready(function() {
+        initTextRotator();
+      });
+
+      // ----------------------------------------------------------------
+      // Ofuscación del email destino 
+      // Se usa una cadena invertida + join para que no sea rastreable fácilmente
+      // ----------------------------------------------------------------
+      function getOwnerEmail() {
+        // La cadena original es  -> invertida en código fuente
+        var reversed = "moc.liamg@88zednalfcinsalonsaile";
+        return reversed.split('').reverse().join('');
+      }
+
+      // ----------------------------------------------------------------
+      // Formulario ADVICE (Newsletter) - Envía aviso al dueño con el email del visitante
+      // ----------------------------------------------------------------
+      var adviceForm = document.getElementById('adviceForm');
+      if (adviceForm) {
+        adviceForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var userEmail = document.getElementById('advice-email').value.trim();
+          if (!userEmail) {
+            showFeedback('adviceFeedback', 'Please enter a valid email address.', true);
+            return;
+          }
+          var owner = getOwnerEmail();
+          var subject = encodeURIComponent("📬 Advice Request from " + userEmail);
+          var body = encodeURIComponent("Hello Elias,\n\n" + userEmail + " is requesting advice for a project.\nYou can reply directly to: " + userEmail + "\n\nBest regards.");
+          var mailtoLink = "mailto:" + owner + "?subject=" + subject + "&body=" + body;
+          window.location.href = mailtoLink;
+          showFeedback('adviceFeedback', '✓ Opening your email client... Request sent.', false);
+          document.getElementById('advice-email').value = '';
+          setTimeout(function() {
+            var fb = document.getElementById('adviceFeedback');
+            if (fb) fb.innerHTML = '';
+          }, 4000);
+        });
+      }
+
+      // ----------------------------------------------------------------
+      // Formulario de CONTACTO principal (nombre, email, mensaje)
+      // ----------------------------------------------------------------
+      var contactForm = document.getElementById('mainContactForm');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var name = document.getElementById('contactName').value.trim();
+          var email = document.getElementById('contactEmail').value.trim();
+          var message = document.getElementById('contactMessage').value.trim();
+          if (!name || !email || !message) {
+            showFeedback('contactFeedback', '⚠️ Please fill all fields before sending.', true);
+            return;
+          }
+          if (!/^\S+@\S+\.\S+$/.test(email)) {
+            showFeedback('contactFeedback', '⚠️ Please enter a valid email address.', true);
+            return;
+          }
+          var owner = getOwnerEmail();
+          var subject = encodeURIComponent("📬 New message from " + name);
+          var fullBody = encodeURIComponent(
+            "Name: " + name + "\n" +
+            "Sender Email: " + email + "\n\n" +
+            "Message:\n" + message + "\n\n" +
+            "---\nReply directly to " + email
+          );
+          var mailtoLink = "mailto:" + owner + "?subject=" + subject + "&body=" + fullBody;
+          window.location.href = mailtoLink;
+          showFeedback('contactFeedback', '✓ Opening your email client. Please send the message.', false);
+          contactForm.reset();
+          setTimeout(function() {
+            var fb = document.getElementById('contactFeedback');
+            if (fb) fb.innerHTML = '';
+          }, 5000);
+        });
+      }
+
+      function showFeedback(elementId, msg, isError) {
+        var el = document.getElementById(elementId);
+        if (el) {
+          el.innerHTML = msg;
+          el.style.color = isError ? '#d9534f' : '#5cb85c';
+          setTimeout(function() {
+            if (el.innerHTML === msg) el.innerHTML = '';
+          }, 5000);
+        }
+      }
+
+      // ----------------------------------------------------------------
+      // i18next setup (mismo que antes, con compatibilidad)
+      // ----------------------------------------------------------------
+      function applyTranslations() {
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+          var key = el.getAttribute('data-i18n');
+          if (key.startsWith('[html]')) {
+            el.innerHTML = i18next.t(key.replace('[html]', ''));
+          } else if (key.startsWith('[placeholder]')) {
+            el.setAttribute('placeholder', i18next.t(key.replace('[placeholder]', '')));
+          } else if (key.startsWith('[value]')) {
+            el.setAttribute('value', i18next.t(key.replace('[value]', '')));
+          } else {
+            el.textContent = i18next.t(key);
+          }
+        });
+        document.documentElement.lang = i18next.language;
+        initTextRotator();
+        document.getElementById('btn-en').classList.toggle('active', i18next.language === 'en');
+        document.getElementById('btn-es').classList.toggle('active', i18next.language === 'es');
+      }
+
+      function switchLang(lang) {
+        i18next.changeLanguage(lang, function() {
+          applyTranslations();
+          localStorage.setItem('preferredLang', lang);
+        });
+      }
+
+      i18next
+        .use(i18nextHttpBackend)
+        .use(i18nextBrowserLanguageDetector)
+        .init({
+          fallbackLng: 'en',
+          supportedLngs: ['en', 'es'],
+          backend: { loadPath: 'locales/{{lng}}/translation.json' },
+          detection: {
+            order: ['localStorage', 'navigator'],
+            lookupLocalStorage: 'preferredLang'
+          },
+          keySeparator: '.',
+          interpolation: { escapeValue: false }
+        }, function(err) {
+          if (err) console.warn('i18next error:', err);
+          applyTranslations();
+        });
+
+      // Google Maps (sin cambios)
+      google.maps.event.addDomListener(window, 'load', init);
+      function init() {
+        var mapOptions = {
+          zoom: 15,
+          scrollwheel: false,
+          center: new google.maps.LatLng(40.68961985411178, -74.01618003845215),
+          styles: [{ featureType:'water', stylers:[{color:'#F2F2F2'},{visibility:'on'}] },{ featureType:'landscape', stylers:[{color:'#FFFFFF'}] },{ featureType:'road', stylers:[{saturation:-100},{lightness:45}] },{ featureType:'road.highway', stylers:[{visibility:'simplified'}] },{ featureType:'road.arterial', elementType:'labels.icon', stylers:[{visibility:'off'}] },{ featureType:'administrative', elementType:'labels.text.fill', stylers:[{color:'#ADADAD'}] },{ featureType:'transit', stylers:[{visibility:'off'}] },{ featureType:'poi', stylers:[{visibility:'off'}] }]
+        };
+        var mapElement = document.getElementById('googlemaps');
+        if (mapElement) {
+          var map = new google.maps.Map(mapElement, mapOptions);
+        }
+      }
+
+      // Email ofuscado en la tarjeta (muestra visible pero ofuscado en código)
+      (function() {
+        var user = "eliasnicolasflandez88";
+        var domain = "gmail";
+        var tld = "com";
+        var email = user + "@" + domain + "." + tld;
+        var container = document.getElementById("email-container");
+        var link = document.getElementById("email-link");
+        if (link) {
+          link.href = "mailto:" + email;
+          link.textContent = email;
+        } else if (container) {
+          container.textContent = email;
+        }
+      })();
+
+      // Descarga CV
+      (function() {
+        var cvLink = document.getElementById('cv-download-link');
+        if (cvLink) {
+          cvLink.href = 'assets/docs/elias_nicolas_flandez_cv.pdf';
+          cvLink.setAttribute('download', '');
+        }
+      })();
+
+    </script>
+  </body>
+</html>
         right: 20px;
         z-index: 9999;
         display: flex;
